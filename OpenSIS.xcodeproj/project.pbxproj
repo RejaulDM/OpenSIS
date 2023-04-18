@@ -7,15 +7,88 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07609CE61247ACA48857503C /* Pods_OpenSIS_OpenSISUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D78507288E8E5A3A2141E44 /* Pods_OpenSIS_OpenSISUITests.framework */; };
+		33F9BE7551B371873751E06A /* Pods_OpenSISTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A3DA8A181618DF64ACB6C69 /* Pods_OpenSISTests.framework */; };
+		745D4AD25676B2B22D2D1BD6 /* Pods_OpenSIS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B85917ED7D17AC3DDB62DF34 /* Pods_OpenSIS.framework */; };
+		D01937F22988E9670072D481 /* GradeDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01937F12988E9670072D481 /* GradeDetailsCell.swift */; };
+		D01937F42988E9850072D481 /* GradeDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01937F32988E9850072D481 /* GradeDetailsController.swift */; };
+		D01A237429693FE300475F91 /* SchoolsDetailsWashInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01A237329693FE300475F91 /* SchoolsDetailsWashInfo.swift */; };
+		D04B9846299600A6001E0FF1 /* AssignmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04B9845299600A5001E0FF1 /* AssignmentCell.swift */; };
+		D067CBB329921D0300893FF6 /* GradeBookConfiguarionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D067CBB229921D0300893FF6 /* GradeBookConfiguarionController.swift */; };
+		D06B0652299EB19100395065 /* InsideAssignmentCreateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06B0651299EB19100395065 /* InsideAssignmentCreateController.swift */; };
+		D06B0654299EB1C200395065 /* CreateNewInsideAssignmentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06B0653299EB1C200395065 /* CreateNewInsideAssignmentController.swift */; };
+		D06B0656299EB1D800395065 /* InsideAssignmentCreateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06B0655299EB1D800395065 /* InsideAssignmentCreateCell.swift */; };
+		D06C2E8A299CDDBC001A18D7 /* SearchPopupDash.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06C2E88299CDDBC001A18D7 /* SearchPopupDash.swift */; };
+		D06C2E8B299CDDBC001A18D7 /* SearchPopupDash.xib in Resources */ = {isa = PBXBuildFile; fileRef = D06C2E89299CDDBC001A18D7 /* SearchPopupDash.xib */; };
+		D06C332E297FDBDE003E72FA /* AttendanceMarkPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06C332D297FDBDE003E72FA /* AttendanceMarkPopup.swift */; };
+		D06C3330297FE443003E72FA /* AttendanceMarkPopupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06C332F297FE442003E72FA /* AttendanceMarkPopupCell.swift */; };
+		D06D53DF29294ACC004A469B /* CheckInternet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06D53DE29294ACC004A469B /* CheckInternet.swift */; };
+		D06D53E129294AD5004A469B /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06D53E029294AD5004A469B /* Global.swift */; };
+		D06D53E329294B00004A469B /* Connstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06D53E229294B00004A469B /* Connstant.swift */; };
+		D06D53E529294B15004A469B /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06D53E429294B14004A469B /* UIColor+Ext.swift */; };
+		D06D53E729294B22004A469B /* DatePickerDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06D53E629294B21004A469B /* DatePickerDialog.swift */; };
+		D06D53E929294B2A004A469B /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06D53E829294B29004A469B /* Colors.swift */; };
+		D06D53EB29294B31004A469B /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06D53EA29294B31004A469B /* Data.swift */; };
+		D06D53FD29294CCF004A469B /* SplashPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06D53FC29294CCF004A469B /* SplashPage.swift */; };
+		D06DCD3A292E46B000DB6C3E /* Dashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06DCD39292E46B000DB6C3E /* Dashboard.swift */; };
+		D06DCD4C292E4D2200DB6C3E /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D06DCD4B292E4D2200DB6C3E /* Login.storyboard */; };
+		D06DCD54292E4D4B00DB6C3E /* SubmitWebURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06DCD4D292E4D4900DB6C3E /* SubmitWebURL.swift */; };
+		D06DCD55292E4D4B00DB6C3E /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06DCD4E292E4D4900DB6C3E /* ForgotPasswordViewController.swift */; };
+		D06DCD56292E4D4B00DB6C3E /* LoginShowData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06DCD4F292E4D4A00DB6C3E /* LoginShowData.swift */; };
+		D06DCD57292E4D4B00DB6C3E /* LoginManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06DCD50292E4D4A00DB6C3E /* LoginManger.swift */; };
+		D06DCD58292E4D4B00DB6C3E /* LoginData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06DCD51292E4D4A00DB6C3E /* LoginData.swift */; };
+		D06DCD59292E4D4C00DB6C3E /* ForgotPasswordManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06DCD52292E4D4B00DB6C3E /* ForgotPasswordManager.swift */; };
+		D06DCD5A292E4D4C00DB6C3E /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06DCD53292E4D4B00DB6C3E /* LoginController.swift */; };
+		D06DCD5C292E4DE600DB6C3E /* Dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D06DCD5B292E4DE600DB6C3E /* Dashboard.storyboard */; };
+		D06DFCA829926E3A00A9FF27 /* QuarterGradeBookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06DFCA729926E3A00A9FF27 /* QuarterGradeBookCell.swift */; };
+		D06DFCAA29926E6D00A9FF27 /* SemesterGradeBookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06DFCA929926E6D00A9FF27 /* SemesterGradeBookCell.swift */; };
+		D06ED2862969906B00590FD6 /* Students.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D06ED2852969906B00590FD6 /* Students.storyboard */; };
+		D06ED288296990D300590FD6 /* AllStudentsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06ED287296990D300590FD6 /* AllStudentsController.swift */; };
+		D06ED4AE296EE423003AAA60 /* ScheduleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06ED4AD296EE423003AAA60 /* ScheduleController.swift */; };
+		D06ED4B0296EE44D003AAA60 /* Schedule.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D06ED4AF296EE44D003AAA60 /* Schedule.storyboard */; };
+		D06FA10B298CC05000FB31F8 /* MarkingPeriods.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D06FA10A298CC05000FB31F8 /* MarkingPeriods.storyboard */; };
+		D06FA10D298CC07600FB31F8 /* MarkingPeriodsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06FA10C298CC07600FB31F8 /* MarkingPeriodsController.swift */; };
+		D06FE6442994CD6300B3B818 /* QuaterGradeBookInputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06FE6422994CD6300B3B818 /* QuaterGradeBookInputController.swift */; };
+		D06FE6452994CD6300B3B818 /* QuaterGradeBookInputController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D06FE6432994CD6300B3B818 /* QuaterGradeBookInputController.xib */; };
+		D06FE64729951EB800B3B818 /* AssignmentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06FE64629951EB800B3B818 /* AssignmentController.swift */; };
+		D07156A7298810100010306D /* Calendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D07156A6298810100010306D /* Calendar.storyboard */; };
+		D07357A6293DEFCD005EB7F5 /* ClassOverviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07357A5293DEFCD005EB7F5 /* ClassOverviewCell.swift */; };
+		D07357A8293DF004005EB7F5 /* ClassOverviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07357A7293DF004005EB7F5 /* ClassOverviewController.swift */; };
+		D074C4A8298968F400DE77CE /* CalendarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D074C4A7298968F400DE77CE /* CalendarController.swift */; };
+		D076AE2C293687C900E248EE /* SchoolsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D076AE2B293687C900E248EE /* SchoolsController.swift */; };
+		D076AE2E293687ED00E248EE /* Schools.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D076AE2D293687ED00E248EE /* Schools.storyboard */; };
+		D076AE3029368FF900E248EE /* SchoolsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D076AE2F29368FF900E248EE /* SchoolsCell.swift */; };
+		D076AE322936984100E248EE /* Classes.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D076AE312936984100E248EE /* Classes.storyboard */; };
+		D076AE342936986000E248EE /* ClassesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D076AE332936986000E248EE /* ClassesCell.swift */; };
+		D076AE362936987C00E248EE /* ClassesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D076AE352936987C00E248EE /* ClassesController.swift */; };
+		D07800E729308E620028995E /* DashboardTodayClassCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07800E629308E620028995E /* DashboardTodayClassCell.swift */; };
 		D07872A829256B1300D86740 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07872A729256B1300D86740 /* AppDelegate.swift */; };
 		D07872AA29256B1300D86740 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07872A929256B1300D86740 /* SceneDelegate.swift */; };
-		D07872AC29256B1300D86740 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07872AB29256B1300D86740 /* ViewController.swift */; };
 		D07872AF29256B1300D86740 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D07872AD29256B1300D86740 /* Main.storyboard */; };
 		D07872B129256B1B00D86740 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D07872B029256B1B00D86740 /* Assets.xcassets */; };
 		D07872B429256B1B00D86740 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D07872B229256B1B00D86740 /* LaunchScreen.storyboard */; };
 		D07872BF29256B1C00D86740 /* OpenSISTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07872BE29256B1C00D86740 /* OpenSISTests.swift */; };
 		D07872C929256B1C00D86740 /* OpenSISUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07872C829256B1C00D86740 /* OpenSISUITests.swift */; };
 		D07872CB29256B1C00D86740 /* OpenSISUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07872CA29256B1C00D86740 /* OpenSISUITestsLaunchTests.swift */; };
+		D0795672298A6635007452C7 /* CalendarEventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0795671298A6635007452C7 /* CalendarEventCell.swift */; };
+		D07983CB297A6F5D00B96D13 /* StudentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07983CA297A6F5D00B96D13 /* StudentController.swift */; };
+		D07983CD297A6FA000B96D13 /* StudentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07983CC297A6FA000B96D13 /* StudentCell.swift */; };
+		D079F9462987967400E369D9 /* AttendanceTextRemarks.swift in Sources */ = {isa = PBXBuildFile; fileRef = D079F9442987967400E369D9 /* AttendanceTextRemarks.swift */; };
+		D079F9472987967400E369D9 /* AttendanceTextRemarks.xib in Resources */ = {isa = PBXBuildFile; fileRef = D079F9452987967400E369D9 /* AttendanceTextRemarks.xib */; };
+		D079F9492987BEC400E369D9 /* GradeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D079F9482987BEC400E369D9 /* GradeController.swift */; };
+		D079F94B2987D49700E369D9 /* GradeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D079F94A2987D49700E369D9 /* GradeCell.swift */; };
+		D07A43BE299817E40044DA97 /* CreateNewAssignmentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07A43BD299817E40044DA97 /* CreateNewAssignmentController.swift */; };
+		D07A51C2296578C800DCA1D5 /* SchoolsDetailsInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07A51C1296578C800DCA1D5 /* SchoolsDetailsInfo.swift */; };
+		D07A9E532977C88A00CC9D70 /* EmptySegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07A9E522977C88A00CC9D70 /* EmptySegue.swift */; };
+		D07A9E552977C93800CC9D70 /* OverviewDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07A9E542977C93800CC9D70 /* OverviewDetailsController.swift */; };
+		D07A9E572977C99C00CC9D70 /* ClassesContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07A9E562977C99C00CC9D70 /* ClassesContainer.swift */; };
+		D07B8B852969ED82007871E9 /* AllStudentsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07B8B842969ED82007871E9 /* AllStudentsCell.swift */; };
+		D07EC1BF299B4A750037BB08 /* PopupSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07EC1BE299B4A750037BB08 /* PopupSearchController.swift */; };
+		D08047B0297D8460003429E9 /* AttendanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08047AF297D8460003429E9 /* AttendanceController.swift */; };
+		D08047B2297D8BD3003429E9 /* AttendanceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08047B1297D8BD3003429E9 /* AttendanceCell.swift */; };
+		D08E8DE32935E67700DC4E61 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08E8DE22935E67700DC4E61 /* BaseViewController.swift */; };
+		D08E8DE52935E68500DC4E61 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08E8DE42935E68400DC4E61 /* MenuViewController.swift */; };
+		D0DC10F029702D1600C524EB /* ScheduleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0DC10EF29702D1600C524EB /* ScheduleCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,10 +109,69 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		03B09B53F9FE4F66ABAFB042 /* Pods-OpenSIS-OpenSISUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenSIS-OpenSISUITests.release.xcconfig"; path = "Target Support Files/Pods-OpenSIS-OpenSISUITests/Pods-OpenSIS-OpenSISUITests.release.xcconfig"; sourceTree = "<group>"; };
+		16C9232D760AB29357C6FDEB /* Pods-OpenSISTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenSISTests.debug.xcconfig"; path = "Target Support Files/Pods-OpenSISTests/Pods-OpenSISTests.debug.xcconfig"; sourceTree = "<group>"; };
+		583C4F6D351B8C1B1222F4DA /* Pods-OpenSIS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenSIS.debug.xcconfig"; path = "Target Support Files/Pods-OpenSIS/Pods-OpenSIS.debug.xcconfig"; sourceTree = "<group>"; };
+		7A3DA8A181618DF64ACB6C69 /* Pods_OpenSISTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OpenSISTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A5A9614A0A3C3764A70A03E /* Pods-OpenSIS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenSIS.release.xcconfig"; path = "Target Support Files/Pods-OpenSIS/Pods-OpenSIS.release.xcconfig"; sourceTree = "<group>"; };
+		8D78507288E8E5A3A2141E44 /* Pods_OpenSIS_OpenSISUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OpenSIS_OpenSISUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A829AFF78ED12B44BB45C516 /* Pods-OpenSISTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenSISTests.release.xcconfig"; path = "Target Support Files/Pods-OpenSISTests/Pods-OpenSISTests.release.xcconfig"; sourceTree = "<group>"; };
+		B85917ED7D17AC3DDB62DF34 /* Pods_OpenSIS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OpenSIS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D01937F12988E9670072D481 /* GradeDetailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeDetailsCell.swift; sourceTree = "<group>"; };
+		D01937F32988E9850072D481 /* GradeDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeDetailsController.swift; sourceTree = "<group>"; };
+		D01A237329693FE300475F91 /* SchoolsDetailsWashInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolsDetailsWashInfo.swift; sourceTree = "<group>"; };
+		D04B9845299600A5001E0FF1 /* AssignmentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentCell.swift; sourceTree = "<group>"; };
+		D067CBB229921D0300893FF6 /* GradeBookConfiguarionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeBookConfiguarionController.swift; sourceTree = "<group>"; };
+		D06B0651299EB19100395065 /* InsideAssignmentCreateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsideAssignmentCreateController.swift; sourceTree = "<group>"; };
+		D06B0653299EB1C200395065 /* CreateNewInsideAssignmentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewInsideAssignmentController.swift; sourceTree = "<group>"; };
+		D06B0655299EB1D800395065 /* InsideAssignmentCreateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsideAssignmentCreateCell.swift; sourceTree = "<group>"; };
+		D06C2E88299CDDBC001A18D7 /* SearchPopupDash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPopupDash.swift; sourceTree = "<group>"; };
+		D06C2E89299CDDBC001A18D7 /* SearchPopupDash.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchPopupDash.xib; sourceTree = "<group>"; };
+		D06C332D297FDBDE003E72FA /* AttendanceMarkPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceMarkPopup.swift; sourceTree = "<group>"; };
+		D06C332F297FE442003E72FA /* AttendanceMarkPopupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceMarkPopupCell.swift; sourceTree = "<group>"; };
+		D06D53DE29294ACC004A469B /* CheckInternet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckInternet.swift; sourceTree = "<group>"; };
+		D06D53E029294AD5004A469B /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
+		D06D53E229294B00004A469B /* Connstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Connstant.swift; sourceTree = "<group>"; };
+		D06D53E429294B14004A469B /* UIColor+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
+		D06D53E629294B21004A469B /* DatePickerDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerDialog.swift; sourceTree = "<group>"; };
+		D06D53E829294B29004A469B /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		D06D53EA29294B31004A469B /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		D06D53FC29294CCF004A469B /* SplashPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashPage.swift; sourceTree = "<group>"; };
+		D06DCD39292E46B000DB6C3E /* Dashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dashboard.swift; sourceTree = "<group>"; };
+		D06DCD4B292E4D2200DB6C3E /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		D06DCD4D292E4D4900DB6C3E /* SubmitWebURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubmitWebURL.swift; sourceTree = "<group>"; };
+		D06DCD4E292E4D4900DB6C3E /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		D06DCD4F292E4D4A00DB6C3E /* LoginShowData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginShowData.swift; sourceTree = "<group>"; };
+		D06DCD50292E4D4A00DB6C3E /* LoginManger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginManger.swift; sourceTree = "<group>"; };
+		D06DCD51292E4D4A00DB6C3E /* LoginData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginData.swift; sourceTree = "<group>"; };
+		D06DCD52292E4D4B00DB6C3E /* ForgotPasswordManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordManager.swift; sourceTree = "<group>"; };
+		D06DCD53292E4D4B00DB6C3E /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		D06DCD5B292E4DE600DB6C3E /* Dashboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Dashboard.storyboard; sourceTree = "<group>"; };
+		D06DFCA729926E3A00A9FF27 /* QuarterGradeBookCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuarterGradeBookCell.swift; sourceTree = "<group>"; };
+		D06DFCA929926E6D00A9FF27 /* SemesterGradeBookCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemesterGradeBookCell.swift; sourceTree = "<group>"; };
+		D06ED2852969906B00590FD6 /* Students.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Students.storyboard; sourceTree = "<group>"; };
+		D06ED287296990D300590FD6 /* AllStudentsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllStudentsController.swift; sourceTree = "<group>"; };
+		D06ED4AD296EE423003AAA60 /* ScheduleController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleController.swift; sourceTree = "<group>"; };
+		D06ED4AF296EE44D003AAA60 /* Schedule.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Schedule.storyboard; sourceTree = "<group>"; };
+		D06FA10A298CC05000FB31F8 /* MarkingPeriods.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MarkingPeriods.storyboard; sourceTree = "<group>"; };
+		D06FA10C298CC07600FB31F8 /* MarkingPeriodsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkingPeriodsController.swift; sourceTree = "<group>"; };
+		D06FE6422994CD6300B3B818 /* QuaterGradeBookInputController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuaterGradeBookInputController.swift; sourceTree = "<group>"; };
+		D06FE6432994CD6300B3B818 /* QuaterGradeBookInputController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuaterGradeBookInputController.xib; sourceTree = "<group>"; };
+		D06FE64629951EB800B3B818 /* AssignmentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentController.swift; sourceTree = "<group>"; };
+		D07156A6298810100010306D /* Calendar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Calendar.storyboard; sourceTree = "<group>"; };
+		D07357A5293DEFCD005EB7F5 /* ClassOverviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassOverviewCell.swift; sourceTree = "<group>"; };
+		D07357A7293DF004005EB7F5 /* ClassOverviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassOverviewController.swift; sourceTree = "<group>"; };
+		D074C4A7298968F400DE77CE /* CalendarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarController.swift; sourceTree = "<group>"; };
+		D076AE2B293687C900E248EE /* SchoolsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolsController.swift; sourceTree = "<group>"; };
+		D076AE2D293687ED00E248EE /* Schools.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Schools.storyboard; sourceTree = "<group>"; };
+		D076AE2F29368FF900E248EE /* SchoolsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolsCell.swift; sourceTree = "<group>"; };
+		D076AE312936984100E248EE /* Classes.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Classes.storyboard; sourceTree = "<group>"; };
+		D076AE332936986000E248EE /* ClassesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassesCell.swift; sourceTree = "<group>"; };
+		D076AE352936987C00E248EE /* ClassesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassesController.swift; sourceTree = "<group>"; };
+		D07800E629308E620028995E /* DashboardTodayClassCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardTodayClassCell.swift; sourceTree = "<group>"; };
 		D07872A429256B1300D86740 /* OpenSIS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenSIS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D07872A729256B1300D86740 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D07872A929256B1300D86740 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D07872AB29256B1300D86740 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D07872AE29256B1300D86740 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D07872B029256B1B00D86740 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D07872B329256B1B00D86740 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +181,26 @@
 		D07872C429256B1C00D86740 /* OpenSISUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OpenSISUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D07872C829256B1C00D86740 /* OpenSISUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenSISUITests.swift; sourceTree = "<group>"; };
 		D07872CA29256B1C00D86740 /* OpenSISUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenSISUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D0795671298A6635007452C7 /* CalendarEventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarEventCell.swift; sourceTree = "<group>"; };
+		D07983CA297A6F5D00B96D13 /* StudentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentController.swift; sourceTree = "<group>"; };
+		D07983CC297A6FA000B96D13 /* StudentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentCell.swift; sourceTree = "<group>"; };
+		D079F9442987967400E369D9 /* AttendanceTextRemarks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceTextRemarks.swift; sourceTree = "<group>"; };
+		D079F9452987967400E369D9 /* AttendanceTextRemarks.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AttendanceTextRemarks.xib; sourceTree = "<group>"; };
+		D079F9482987BEC400E369D9 /* GradeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeController.swift; sourceTree = "<group>"; };
+		D079F94A2987D49700E369D9 /* GradeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeCell.swift; sourceTree = "<group>"; };
+		D07A43BD299817E40044DA97 /* CreateNewAssignmentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewAssignmentController.swift; sourceTree = "<group>"; };
+		D07A51C1296578C800DCA1D5 /* SchoolsDetailsInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolsDetailsInfo.swift; sourceTree = "<group>"; };
+		D07A9E522977C88A00CC9D70 /* EmptySegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptySegue.swift; sourceTree = "<group>"; };
+		D07A9E542977C93800CC9D70 /* OverviewDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewDetailsController.swift; sourceTree = "<group>"; };
+		D07A9E562977C99C00CC9D70 /* ClassesContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassesContainer.swift; sourceTree = "<group>"; };
+		D07B8B842969ED82007871E9 /* AllStudentsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllStudentsCell.swift; sourceTree = "<group>"; };
+		D07EC1BE299B4A750037BB08 /* PopupSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupSearchController.swift; sourceTree = "<group>"; };
+		D08047AF297D8460003429E9 /* AttendanceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceController.swift; sourceTree = "<group>"; };
+		D08047B1297D8BD3003429E9 /* AttendanceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceCell.swift; sourceTree = "<group>"; };
+		D08E8DE22935E67700DC4E61 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		D08E8DE42935E68400DC4E61 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		D0DC10EF29702D1600C524EB /* ScheduleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleCell.swift; sourceTree = "<group>"; };
+		E772DE2B6A7F3A43666BB34A /* Pods-OpenSIS-OpenSISUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenSIS-OpenSISUITests.debug.xcconfig"; path = "Target Support Files/Pods-OpenSIS-OpenSISUITests/Pods-OpenSIS-OpenSISUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +208,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				745D4AD25676B2B22D2D1BD6 /* Pods_OpenSIS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +216,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33F9BE7551B371873751E06A /* Pods_OpenSISTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,19 +224,217 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07609CE61247ACA48857503C /* Pods_OpenSIS_OpenSISUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		258C50B2A5DD64F1E567CEB2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				583C4F6D351B8C1B1222F4DA /* Pods-OpenSIS.debug.xcconfig */,
+				8A5A9614A0A3C3764A70A03E /* Pods-OpenSIS.release.xcconfig */,
+				E772DE2B6A7F3A43666BB34A /* Pods-OpenSIS-OpenSISUITests.debug.xcconfig */,
+				03B09B53F9FE4F66ABAFB042 /* Pods-OpenSIS-OpenSISUITests.release.xcconfig */,
+				16C9232D760AB29357C6FDEB /* Pods-OpenSISTests.debug.xcconfig */,
+				A829AFF78ED12B44BB45C516 /* Pods-OpenSISTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		A867F7642C4AC39D2105CE35 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B85917ED7D17AC3DDB62DF34 /* Pods_OpenSIS.framework */,
+				8D78507288E8E5A3A2141E44 /* Pods_OpenSIS_OpenSISUITests.framework */,
+				7A3DA8A181618DF64ACB6C69 /* Pods_OpenSISTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D06DCD2E292E445C00DB6C3E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D06D53FC29294CCF004A469B /* SplashPage.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D06DCD32292E457F00DB6C3E /* Login Module */ = {
+			isa = PBXGroup;
+			children = (
+				D06DCD4B292E4D2200DB6C3E /* Login.storyboard */,
+				D06DCD52292E4D4B00DB6C3E /* ForgotPasswordManager.swift */,
+				D06DCD4E292E4D4900DB6C3E /* ForgotPasswordViewController.swift */,
+				D06DCD53292E4D4B00DB6C3E /* LoginController.swift */,
+				D06DCD51292E4D4A00DB6C3E /* LoginData.swift */,
+				D06DCD50292E4D4A00DB6C3E /* LoginManger.swift */,
+				D06DCD4F292E4D4A00DB6C3E /* LoginShowData.swift */,
+				D06DCD4D292E4D4900DB6C3E /* SubmitWebURL.swift */,
+				D06DCD35292E45CD00DB6C3E /* Model */,
+				D06DCD33292E45A000DB6C3E /* View */,
+				D06DCD34292E45BA00DB6C3E /* Controller */,
+			);
+			path = "Login Module";
+			sourceTree = "<group>";
+		};
+		D06DCD33292E45A000DB6C3E /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D06DCD34292E45BA00DB6C3E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D06DCD35292E45CD00DB6C3E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D06DCD38292E466D00DB6C3E /* Dashboard Module */ = {
+			isa = PBXGroup;
+			children = (
+				D06DCD39292E46B000DB6C3E /* Dashboard.swift */,
+				D07800E629308E620028995E /* DashboardTodayClassCell.swift */,
+				D07EC1BE299B4A750037BB08 /* PopupSearchController.swift */,
+				D06C2E88299CDDBC001A18D7 /* SearchPopupDash.swift */,
+				D06C2E89299CDDBC001A18D7 /* SearchPopupDash.xib */,
+				D08E8DE22935E67700DC4E61 /* BaseViewController.swift */,
+				D08E8DE42935E68400DC4E61 /* MenuViewController.swift */,
+				D06DCD5B292E4DE600DB6C3E /* Dashboard.storyboard */,
+			);
+			path = "Dashboard Module";
+			sourceTree = "<group>";
+		};
+		D06ED289296990FA00590FD6 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				D076AE312936984100E248EE /* Classes.storyboard */,
+				D07A9E522977C88A00CC9D70 /* EmptySegue.swift */,
+				D076AE332936986000E248EE /* ClassesCell.swift */,
+				D076AE352936987C00E248EE /* ClassesController.swift */,
+				D07357A5293DEFCD005EB7F5 /* ClassOverviewCell.swift */,
+				D07357A7293DF004005EB7F5 /* ClassOverviewController.swift */,
+				D07A9E542977C93800CC9D70 /* OverviewDetailsController.swift */,
+				D07983CA297A6F5D00B96D13 /* StudentController.swift */,
+				D07983CC297A6FA000B96D13 /* StudentCell.swift */,
+				D08047AF297D8460003429E9 /* AttendanceController.swift */,
+				D08047B1297D8BD3003429E9 /* AttendanceCell.swift */,
+				D06C332D297FDBDE003E72FA /* AttendanceMarkPopup.swift */,
+				D06C332F297FE442003E72FA /* AttendanceMarkPopupCell.swift */,
+				D079F9442987967400E369D9 /* AttendanceTextRemarks.swift */,
+				D079F9452987967400E369D9 /* AttendanceTextRemarks.xib */,
+				D07A9E562977C99C00CC9D70 /* ClassesContainer.swift */,
+				D079F9482987BEC400E369D9 /* GradeController.swift */,
+				D079F94A2987D49700E369D9 /* GradeCell.swift */,
+				D01937F12988E9670072D481 /* GradeDetailsCell.swift */,
+				D01937F32988E9850072D481 /* GradeDetailsController.swift */,
+				D067CBB229921D0300893FF6 /* GradeBookConfiguarionController.swift */,
+				D06DFCA729926E3A00A9FF27 /* QuarterGradeBookCell.swift */,
+				D06DFCA929926E6D00A9FF27 /* SemesterGradeBookCell.swift */,
+				D06FE6422994CD6300B3B818 /* QuaterGradeBookInputController.swift */,
+				D06FE6432994CD6300B3B818 /* QuaterGradeBookInputController.xib */,
+				D06FE64629951EB800B3B818 /* AssignmentController.swift */,
+				D07A43BD299817E40044DA97 /* CreateNewAssignmentController.swift */,
+				D04B9845299600A5001E0FF1 /* AssignmentCell.swift */,
+				D06B0651299EB19100395065 /* InsideAssignmentCreateController.swift */,
+				D06B0653299EB1C200395065 /* CreateNewInsideAssignmentController.swift */,
+				D06B0655299EB1D800395065 /* InsideAssignmentCreateCell.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		D06ED4AC296EE366003AAA60 /* Students */ = {
+			isa = PBXGroup;
+			children = (
+				D06ED2852969906B00590FD6 /* Students.storyboard */,
+				D06ED287296990D300590FD6 /* AllStudentsController.swift */,
+				D07B8B842969ED82007871E9 /* AllStudentsCell.swift */,
+			);
+			name = Students;
+			sourceTree = "<group>";
+		};
+		D07357A4293DBAE8005EB7F5 /* Schools Module */ = {
+			isa = PBXGroup;
+			children = (
+				D076AE2B293687C900E248EE /* SchoolsController.swift */,
+				D076AE2F29368FF900E248EE /* SchoolsCell.swift */,
+				D07A51C1296578C800DCA1D5 /* SchoolsDetailsInfo.swift */,
+				D01A237329693FE300475F91 /* SchoolsDetailsWashInfo.swift */,
+				D076AE2D293687ED00E248EE /* Schools.storyboard */,
+			);
+			name = "Schools Module";
+			sourceTree = "<group>";
+		};
+		D07647BF2926B7B7005D832D /* Project Resource */ = {
+			isa = PBXGroup;
+			children = (
+				D07872A729256B1300D86740 /* AppDelegate.swift */,
+				D07872A929256B1300D86740 /* SceneDelegate.swift */,
+				D06D53DE29294ACC004A469B /* CheckInternet.swift */,
+				D06D53E029294AD5004A469B /* Global.swift */,
+				D06D53E229294B00004A469B /* Connstant.swift */,
+				D06D53E629294B21004A469B /* DatePickerDialog.swift */,
+				D06D53E429294B14004A469B /* UIColor+Ext.swift */,
+				D06D53E829294B29004A469B /* Colors.swift */,
+				D06D53EA29294B31004A469B /* Data.swift */,
+				D07872B029256B1B00D86740 /* Assets.xcassets */,
+				D07872B229256B1B00D86740 /* LaunchScreen.storyboard */,
+				D07872B529256B1B00D86740 /* Info.plist */,
+			);
+			path = "Project Resource";
+			sourceTree = "<group>";
+		};
+		D07647C02926B87A005D832D /* Launch Screen */ = {
+			isa = PBXGroup;
+			children = (
+				D07647C12926B889005D832D /* View */,
+				D06DCD2E292E445C00DB6C3E /* Controller */,
+			);
+			path = "Launch Screen";
+			sourceTree = "<group>";
+		};
+		D07647C12926B889005D832D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D07872AD29256B1300D86740 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		D078729B29256B1300D86740 = {
 			isa = PBXGroup;
 			children = (
 				D07872A629256B1300D86740 /* OpenSIS */,
+				D07647C02926B87A005D832D /* Launch Screen */,
+				D06DCD32292E457F00DB6C3E /* Login Module */,
+				D06DCD38292E466D00DB6C3E /* Dashboard Module */,
+				D07357A4293DBAE8005EB7F5 /* Schools Module */,
+				D06ED289296990FA00590FD6 /* Classes */,
+				D06ED4AC296EE366003AAA60 /* Students */,
+				D06ED4AF296EE44D003AAA60 /* Schedule.storyboard */,
+				D06ED4AD296EE423003AAA60 /* ScheduleController.swift */,
+				D0DC10EF29702D1600C524EB /* ScheduleCell.swift */,
+				D074C4A7298968F400DE77CE /* CalendarController.swift */,
+				D0795671298A6635007452C7 /* CalendarEventCell.swift */,
+				D07156A6298810100010306D /* Calendar.storyboard */,
+				D06FA10A298CC05000FB31F8 /* MarkingPeriods.storyboard */,
+				D06FA10C298CC07600FB31F8 /* MarkingPeriodsController.swift */,
 				D07872BD29256B1C00D86740 /* OpenSISTests */,
 				D07872C729256B1C00D86740 /* OpenSISUITests */,
 				D07872A529256B1300D86740 /* Products */,
+				258C50B2A5DD64F1E567CEB2 /* Pods */,
+				A867F7642C4AC39D2105CE35 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,13 +451,7 @@
 		D07872A629256B1300D86740 /* OpenSIS */ = {
 			isa = PBXGroup;
 			children = (
-				D07872A729256B1300D86740 /* AppDelegate.swift */,
-				D07872A929256B1300D86740 /* SceneDelegate.swift */,
-				D07872AB29256B1300D86740 /* ViewController.swift */,
-				D07872AD29256B1300D86740 /* Main.storyboard */,
-				D07872B029256B1B00D86740 /* Assets.xcassets */,
-				D07872B229256B1B00D86740 /* LaunchScreen.storyboard */,
-				D07872B529256B1B00D86740 /* Info.plist */,
+				D07647BF2926B7B7005D832D /* Project Resource */,
 			);
 			path = OpenSIS;
 			sourceTree = "<group>";
@@ -134,9 +480,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D07872CE29256B1C00D86740 /* Build configuration list for PBXNativeTarget "OpenSIS" */;
 			buildPhases = (
+				A3805DCF7F22111313682562 /* [CP] Check Pods Manifest.lock */,
 				D07872A029256B1300D86740 /* Sources */,
 				D07872A129256B1300D86740 /* Frameworks */,
 				D07872A229256B1300D86740 /* Resources */,
+				C726091002A745E813137683 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -151,6 +499,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D07872D129256B1C00D86740 /* Build configuration list for PBXNativeTarget "OpenSISTests" */;
 			buildPhases = (
+				2A740AC6194914543137B520 /* [CP] Check Pods Manifest.lock */,
 				D07872B629256B1C00D86740 /* Sources */,
 				D07872B729256B1C00D86740 /* Frameworks */,
 				D07872B829256B1C00D86740 /* Resources */,
@@ -169,9 +518,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D07872D429256B1C00D86740 /* Build configuration list for PBXNativeTarget "OpenSISUITests" */;
 			buildPhases = (
+				8ED951F62C2905E83C1AB7CF /* [CP] Check Pods Manifest.lock */,
 				D07872C029256B1C00D86740 /* Sources */,
 				D07872C129256B1C00D86740 /* Frameworks */,
 				D07872C229256B1C00D86740 /* Resources */,
+				9329AF95440FD30ABC742CD4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -231,6 +582,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D06FE6452994CD6300B3B818 /* QuaterGradeBookInputController.xib in Resources */,
+				D06DCD4C292E4D2200DB6C3E /* Login.storyboard in Resources */,
+				D06C2E8B299CDDBC001A18D7 /* SearchPopupDash.xib in Resources */,
+				D076AE322936984100E248EE /* Classes.storyboard in Resources */,
+				D06ED4B0296EE44D003AAA60 /* Schedule.storyboard in Resources */,
+				D06FA10B298CC05000FB31F8 /* MarkingPeriods.storyboard in Resources */,
+				D06DCD5C292E4DE600DB6C3E /* Dashboard.storyboard in Resources */,
+				D076AE2E293687ED00E248EE /* Schools.storyboard in Resources */,
+				D07156A7298810100010306D /* Calendar.storyboard in Resources */,
+				D079F9472987967400E369D9 /* AttendanceTextRemarks.xib in Resources */,
+				D06ED2862969906B00590FD6 /* Students.storyboard in Resources */,
 				D07872B429256B1B00D86740 /* LaunchScreen.storyboard in Resources */,
 				D07872B129256B1B00D86740 /* Assets.xcassets in Resources */,
 				D07872AF29256B1300D86740 /* Main.storyboard in Resources */,
@@ -253,14 +615,176 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2A740AC6194914543137B520 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OpenSISTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8ED951F62C2905E83C1AB7CF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OpenSIS-OpenSISUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9329AF95440FD30ABC742CD4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OpenSIS-OpenSISUITests/Pods-OpenSIS-OpenSISUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OpenSIS-OpenSISUITests/Pods-OpenSIS-OpenSISUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OpenSIS-OpenSISUITests/Pods-OpenSIS-OpenSISUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A3805DCF7F22111313682562 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OpenSIS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C726091002A745E813137683 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OpenSIS/Pods-OpenSIS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OpenSIS/Pods-OpenSIS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OpenSIS/Pods-OpenSIS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D07872A029256B1300D86740 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D07872AC29256B1300D86740 /* ViewController.swift in Sources */,
+				D06FA10D298CC07600FB31F8 /* MarkingPeriodsController.swift in Sources */,
+				D07800E729308E620028995E /* DashboardTodayClassCell.swift in Sources */,
+				D074C4A8298968F400DE77CE /* CalendarController.swift in Sources */,
+				D079F9462987967400E369D9 /* AttendanceTextRemarks.swift in Sources */,
+				D07A9E532977C88A00CC9D70 /* EmptySegue.swift in Sources */,
+				D076AE362936987C00E248EE /* ClassesController.swift in Sources */,
+				D06D53E529294B15004A469B /* UIColor+Ext.swift in Sources */,
+				D08047B0297D8460003429E9 /* AttendanceController.swift in Sources */,
+				D076AE342936986000E248EE /* ClassesCell.swift in Sources */,
+				D06DFCAA29926E6D00A9FF27 /* SemesterGradeBookCell.swift in Sources */,
+				D06ED4AE296EE423003AAA60 /* ScheduleController.swift in Sources */,
+				D0795672298A6635007452C7 /* CalendarEventCell.swift in Sources */,
+				D07A9E572977C99C00CC9D70 /* ClassesContainer.swift in Sources */,
+				D06D53EB29294B31004A469B /* Data.swift in Sources */,
+				D07A9E552977C93800CC9D70 /* OverviewDetailsController.swift in Sources */,
+				D076AE2C293687C900E248EE /* SchoolsController.swift in Sources */,
+				D06DCD57292E4D4B00DB6C3E /* LoginManger.swift in Sources */,
+				D07357A6293DEFCD005EB7F5 /* ClassOverviewCell.swift in Sources */,
+				D06D53E929294B2A004A469B /* Colors.swift in Sources */,
+				D079F9492987BEC400E369D9 /* GradeController.swift in Sources */,
+				D07A43BE299817E40044DA97 /* CreateNewAssignmentController.swift in Sources */,
+				D08E8DE32935E67700DC4E61 /* BaseViewController.swift in Sources */,
+				D06DCD3A292E46B000DB6C3E /* Dashboard.swift in Sources */,
+				D06C2E8A299CDDBC001A18D7 /* SearchPopupDash.swift in Sources */,
+				D06D53FD29294CCF004A469B /* SplashPage.swift in Sources */,
+				D06D53DF29294ACC004A469B /* CheckInternet.swift in Sources */,
+				D06DCD56292E4D4B00DB6C3E /* LoginShowData.swift in Sources */,
+				D07EC1BF299B4A750037BB08 /* PopupSearchController.swift in Sources */,
+				D08E8DE52935E68500DC4E61 /* MenuViewController.swift in Sources */,
+				D06FE64729951EB800B3B818 /* AssignmentController.swift in Sources */,
+				D01937F22988E9670072D481 /* GradeDetailsCell.swift in Sources */,
+				D07357A8293DF004005EB7F5 /* ClassOverviewController.swift in Sources */,
+				D07B8B852969ED82007871E9 /* AllStudentsCell.swift in Sources */,
+				D08047B2297D8BD3003429E9 /* AttendanceCell.swift in Sources */,
+				D07A51C2296578C800DCA1D5 /* SchoolsDetailsInfo.swift in Sources */,
+				D06D53E329294B00004A469B /* Connstant.swift in Sources */,
 				D07872A829256B1300D86740 /* AppDelegate.swift in Sources */,
+				D06FE6442994CD6300B3B818 /* QuaterGradeBookInputController.swift in Sources */,
+				D06B0652299EB19100395065 /* InsideAssignmentCreateController.swift in Sources */,
+				D07983CB297A6F5D00B96D13 /* StudentController.swift in Sources */,
+				D06B0656299EB1D800395065 /* InsideAssignmentCreateCell.swift in Sources */,
+				D06D53E729294B22004A469B /* DatePickerDialog.swift in Sources */,
+				D079F94B2987D49700E369D9 /* GradeCell.swift in Sources */,
+				D067CBB329921D0300893FF6 /* GradeBookConfiguarionController.swift in Sources */,
+				D06B0654299EB1C200395065 /* CreateNewInsideAssignmentController.swift in Sources */,
+				D06DCD59292E4D4C00DB6C3E /* ForgotPasswordManager.swift in Sources */,
+				D04B9846299600A6001E0FF1 /* AssignmentCell.swift in Sources */,
+				D06D53E129294AD5004A469B /* Global.swift in Sources */,
+				D06DCD5A292E4D4C00DB6C3E /* LoginController.swift in Sources */,
+				D01A237429693FE300475F91 /* SchoolsDetailsWashInfo.swift in Sources */,
+				D06DCD55292E4D4B00DB6C3E /* ForgotPasswordViewController.swift in Sources */,
+				D07983CD297A6FA000B96D13 /* StudentCell.swift in Sources */,
+				D06C3330297FE443003E72FA /* AttendanceMarkPopupCell.swift in Sources */,
+				D06DFCA829926E3A00A9FF27 /* QuarterGradeBookCell.swift in Sources */,
+				D06ED288296990D300590FD6 /* AllStudentsController.swift in Sources */,
+				D06C332E297FDBDE003E72FA /* AttendanceMarkPopup.swift in Sources */,
+				D076AE3029368FF900E248EE /* SchoolsCell.swift in Sources */,
+				D06DCD58292E4D4B00DB6C3E /* LoginData.swift in Sources */,
+				D06DCD54292E4D4B00DB6C3E /* SubmitWebURL.swift in Sources */,
+				D0DC10F029702D1600C524EB /* ScheduleCell.swift in Sources */,
 				D07872AA29256B1300D86740 /* SceneDelegate.swift in Sources */,
+				D01937F42988E9850072D481 /* GradeDetailsController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,25 +956,27 @@
 		};
 		D07872CF29256B1C00D86740 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 583C4F6D351B8C1B1222F4DA /* Pods-OpenSIS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 9RFZHVG2BJ;
+				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_TEAM = HXWVJ7243W;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = OpenSIS/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "PACIFIC EMIS";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.gcl.-Skanem.OpenSIS";
+				MARKETING_VERSION = 1.0.02;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.PACIFIC-EMIS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -460,25 +986,27 @@
 		};
 		D07872D029256B1C00D86740 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8A5A9614A0A3C3764A70A03E /* Pods-OpenSIS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 9RFZHVG2BJ;
+				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_TEAM = HXWVJ7243W;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = OpenSIS/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "PACIFIC EMIS";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.gcl.-Skanem.OpenSIS";
+				MARKETING_VERSION = 1.0.02;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.PACIFIC-EMIS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -488,6 +1016,7 @@
 		};
 		D07872D229256B1C00D86740 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 16C9232D760AB29357C6FDEB /* Pods-OpenSISTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -508,6 +1037,7 @@
 		};
 		D07872D329256B1C00D86740 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A829AFF78ED12B44BB45C516 /* Pods-OpenSISTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -528,6 +1058,7 @@
 		};
 		D07872D529256B1C00D86740 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E772DE2B6A7F3A43666BB34A /* Pods-OpenSIS-OpenSISUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -546,6 +1077,7 @@
 		};
 		D07872D629256B1C00D86740 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 03B09B53F9FE4F66ABAFB042 /* Pods-OpenSIS-OpenSISUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
