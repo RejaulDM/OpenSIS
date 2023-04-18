@@ -1,0 +1,66 @@
+PODS:
+  - Alamofire (4.9.1)
+  - AMShimmer (1.0.6)
+  - DTTextField (0.7.0)
+  - FSCalendar (2.8.4)
+  - iOSDropDown (0.3.4)
+  - IQKeyboardManagerSwift (6.5.9)
+  - ListPlaceholder (1.5)
+  - SDWebImage (5.12.2):
+    - SDWebImage/Core (= 5.12.2)
+  - SDWebImage/Core (5.12.2)
+  - SearchTextField (1.2.4)
+  - SVProgressHUD (2.2.5)
+  - SwiftyJSON (5.0.1)
+  - Toast-Swift (5.0.1)
+  - TransitionButton (0.5.3)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.7)
+  - AMShimmer
+  - DTTextField
+  - FSCalendar
+  - iOSDropDown
+  - IQKeyboardManagerSwift
+  - ListPlaceholder
+  - SDWebImage
+  - SearchTextField
+  - SVProgressHUD
+  - SwiftyJSON
+  - Toast-Swift (~> 5.0.1)
+  - TransitionButton
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - AMShimmer
+    - DTTextField
+    - FSCalendar
+    - iOSDropDown
+    - IQKeyboardManagerSwift
+    - ListPlaceholder
+    - SDWebImage
+    - SearchTextField
+    - SVProgressHUD
+    - SwiftyJSON
+    - Toast-Swift
+    - TransitionButton
+
+SPEC CHECKSUMS:
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  AMShimmer: 681eeaaedf9fc4e390e95e9dd6fe59df947cfee0
+  DTTextField: 768d5991211599145f289971e5936f8bb29990bb
+  FSCalendar: 2d1d0d9398f12d439f55c1fe0f01525b151b8260
+  iOSDropDown: c10a761f9a00c3f1cc9d3bce43ae504628e2f692
+  IQKeyboardManagerSwift: 6e839c575c4aa1078d58a596e41244e77abe918f
+  ListPlaceholder: 2d7950014852ee5613d636cf14fd1bb93419e330
+  SDWebImage: 240e5c12b592fb1268c1d03b8c90d90e8c2ffe82
+  SearchTextField: 40dc3cc57def5a211f263cac263622c163bbc25a
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
+  Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
+  TransitionButton: 36283346e17c64775a1b3bc3a7a72940a367de1f
+
+PODFILE CHECKSUM: b38e858ae28a3b9ce04601cdd4079c663e21289e
+
+COCOAPODS: 1.11.3
