@@ -25,7 +25,7 @@ class ScheduleController: UIViewController,UITableViewDelegate,UITableViewDataSo
     var  storeTenantID = UserDefaults.standard.string(forKey: "Key_TenantId") ?? ""
     var  storeTenantName = UserDefaults.standard.string(forKey: "Key_TenantName") ?? ""
     var  storeToken = UserDefaults.standard.string(forKey: "Key_Token") ?? ""
-    var  storeUserID = UserDefaults.standard.string(forKey: "Key_UserID") ?? ""
+    var  storeUserID = UserDefaults.standard.string(forKey: "KEY_USERID") ?? ""
     var  storeName = UserDefaults.standard.string(forKey: "Key_Name") ?? ""
     var storeAcademicYears = UserDefaults.standard.string(forKey: "Key_AcademicYears") ?? ""
     
@@ -217,6 +217,7 @@ extension ScheduleController{
             "staffId":storeUserID,
             "tenantId":storeTenantID,
             "_tenantName":storeTenantName,
+            "_academicYear": storeAcademicYears,
             "_token":storeToken,
             "_userName":storeName,
             ] as [String : Any];
@@ -353,5 +354,19 @@ class SelectedSchedule {
         self.PeriodTitle = PeriodTitle
         self.PeriodStartTime = PeriodStartTime
         self.RoomTitle = RoomTitle
+    }
+}
+
+
+extension String {
+    var attributedHtmlString: NSAttributedString? {
+        try? NSAttributedString(
+            data: Data(utf8),
+            options: [
+                .documentType: NSAttributedString.DocumentType.html,
+                .characterEncoding: String.Encoding.utf8.rawValue
+            ],
+            documentAttributes: nil
+        )
     }
 }

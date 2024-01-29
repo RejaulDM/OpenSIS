@@ -37,8 +37,13 @@ public class Options {
     var selectYearName: [String] = []
     var selectYearSDate: [String] = []
     var selectYearEDate: [String] = []
+    var selectAccaYear: [String] = []
     
     var selectPeriodTitle: [String] = []
     var selectMarkingPeriodId: [String] = []
+    
+    var arrText: [String] = []
+    var arrValue: [String] = []
+    var arrGradeList: [String] = ["A","B","C","D","F","Inc."]
     
 }

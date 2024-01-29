@@ -27,6 +27,7 @@ class AttendanceMarkPopup: UIViewController,UITableViewDelegate,UITableViewDataS
     var storeCourseSectionID = UserDefaults.standard.string(forKey: "Key_CourseSectionID") ?? ""
     var storeAcademicYears = UserDefaults.standard.string(forKey: "Key_AcademicYears") ?? ""
     let BaseURL = UserDefaults.standard.string(forKey: "Key_BaseURL") ?? ""
+    let storeAttCategoryId = UserDefaults.standard.string(forKey: "Key_AttCategoryId") ?? ""
     
     var arrAttendanceList = [JSON]()
     
@@ -70,19 +71,21 @@ class AttendanceMarkPopup: UIViewController,UITableViewDelegate,UITableViewDataS
         
         let item = arrAttendanceStatus[indexPath.row]
         
-        cell.lblAttStatus.text = item["stateCode"].stringValue + "(" + item["shortName"].stringValue + ")"
+        cell.lblAttStatus.text = item["title"].stringValue
+        //+ "(" + item["shortName"].stringValue + ")"
         let attstsud = item["shortName"].stringValue
         
-        if attstsud == "P"{
-            cell.viewBack.layer.backgroundColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
-        }else if attstsud == "Ab"{
+         if attstsud == "A"{
             cell.viewBack.layer.backgroundColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
-        }else if attstsud == "HF"{
-            cell.viewBack.layer.backgroundColor = #colorLiteral(red: 0.1960784346, green: 0.3411764801, blue: 0.1019607857, alpha: 1)
+        }else if attstsud == "ML" || attstsud == "HF"{
+            cell.viewBack.layer.backgroundColor = #colorLiteral(red: 1, green: 0.5843137255, blue: 0, alpha: 1)
+        }else{
+            cell.viewBack.layer.backgroundColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
         }
         
         //transparents table view cell
             cell.selectionStyle = .none
+      
         return cell
     }
     
@@ -113,12 +116,13 @@ extension AttendanceMarkPopup{
         
         let parameters = [
             "attendanceCodeList": [],
-            "attendanceCategoryId":1,
+            "attendanceCategoryId":storeAttCategoryId,
             "_tenantName":storeTenantName,
             "_userName":storeName,
             "_token":storeToken,
             "tenantId":storeTenantID,
             "schoolId":storeSchoolID,
+            "_academicYear": storeAcademicYears,
             "academicYear":storeAcademicYears
             
             ] as [String : Any];
@@ -208,7 +212,7 @@ extension AttendanceMarkPopup{
                  if status == "false"{
                      let allSchool = json["scheduleStudentForView"].arrayValue
                      
-                     print("arrAttendanceList==",self.arrAttendanceList)
+                     print("arrAttendanceList Popup==",self.arrAttendanceList)
                      
                  }else{
                     self.displayAlertMessage(messageToDisplay: message)

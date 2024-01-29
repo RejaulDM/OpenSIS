@@ -24,7 +24,7 @@ class CreateNewInsideAssignmentController: UIViewController {
     
     @IBOutlet weak var textDueDate: UITextField!
     
-    var  storeSchoolID = UserDefaults.standard.string(forKey: "Key_SelectSchoolID") ?? ""
+    var  storeSchoolID = UserDefaults.standard.string(forKey: "Key_SchoolID") ?? ""
     var  storeEmail = UserDefaults.standard.string(forKey: "Key_Email") ?? ""
     var  storeTenantID = UserDefaults.standard.string(forKey: "Key_TenantId") ?? ""
     var  storeTenantName = UserDefaults.standard.string(forKey: "Key_TenantName") ?? ""
@@ -54,6 +54,8 @@ class CreateNewInsideAssignmentController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print("storeSchoolID==",storeSchoolID)
         
         //clickable label code
         let tapRe = UITapGestureRecognizer(target: self, action: #selector(CreateNewInsideAssignmentController.tappRe))
@@ -111,7 +113,7 @@ class CreateNewInsideAssignmentController: UIViewController {
     
     @IBAction func btnCancel(_ sender: Any) {
         
-            self.dismiss(animated: true, completion: nil)
+    self.dismiss(animated: true, completion: nil)
         
     }
     
@@ -151,6 +153,7 @@ class CreateNewInsideAssignmentController: UIViewController {
              "_userName":storeName,
              "_token":storeToken,
              "tenantId":storeTenantID,
+            "_academicYear":storeAcademicYears,
              "schoolId":storeSchoolID
             ]as [String : Any];
         print("Param addAssignmentType==",parameters)

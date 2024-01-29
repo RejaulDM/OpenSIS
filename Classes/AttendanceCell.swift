@@ -42,6 +42,9 @@ class AttendanceCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         
+        imgProfile.layer.cornerRadius = imgProfile.frame.height/2
+        imgProfile.clipsToBounds = true
+        
         viewBack.layer.cornerRadius = 8
         viewBack.layer.borderWidth = 1
         viewBack.layer.borderColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)

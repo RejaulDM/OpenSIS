@@ -20,18 +20,27 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login-bg-narrow" translatesAutoresizingMaskIntoConstraints="NO" id="hiH-EE-tEp">
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pecificlogo" translatesAutoresizingMaskIntoConstraints="NO" id="95B-vG-5AL">
-                                <rect key="frame" x="-0.66666666666665719" y="112" width="391.33333333333326" height="137"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login-logo-bg" translatesAutoresizingMaskIntoConstraints="NO" id="vHY-TN-rcH">
+                                <rect key="frame" x="91" y="114" width="208" height="175"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="391" id="VhI-Cd-c4c"/>
-                                    <constraint firstAttribute="height" constant="137" id="quN-P6-PeQ"/>
+                                    <constraint firstAttribute="width" constant="208" id="I5S-Eg-ENf"/>
+                                    <constraint firstAttribute="height" constant="175" id="bwP-jo-ACi"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type your school's PACIFIC EMIS web address below" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v6O-8q-S6V">
-                                <rect key="frame" x="8" y="424" width="374" height="47"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login-logo-full" translatesAutoresizingMaskIntoConstraints="NO" id="CXD-wa-y9E">
+                                <rect key="frame" x="152.66666666666666" y="162" width="85" height="85"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="85" id="Uza-9J-cwW"/>
+                                    <constraint firstAttribute="width" constant="85" id="gzU-aO-kxb"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v6O-8q-S6V">
+                                <rect key="frame" x="8" y="399" width="374" height="47"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="47" id="rG1-x7-gmO"/>
                                 </constraints>
+                                <string key="text">Type your school’s openSIS web address
+below.</string>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -39,7 +48,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NCQ-9e-wyj">
                                 <rect key="frame" x="8" y="492" width="366" height="60"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="https://fedsis.doe.fm/" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E6p-uN-a5p" customClass="DTTextField" customModule="DTTextField">
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E6p-uN-a5p" customClass="DTTextField" customModule="DTTextField">
                                         <rect key="frame" x="0.0" y="3" width="350" height="55"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -48,7 +57,7 @@
                                         </constraints>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="URL"/>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -75,40 +84,57 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ibf-tU-85j">
-                                <rect key="frame" x="16" y="652" width="358" height="95"/>
+                                <rect key="frame" x="16" y="652" width="358" height="72"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="95" id="pa8-Ha-RsU"/>
+                                    <constraint firstAttribute="height" constant="72" id="pa8-Ha-RsU"/>
                                 </constraints>
-                                <string key="text">Note: Mobile access to PACIFIC EMIS must be turned school administrator and you must have a valid account to access PACIFIC EMIS via a mobile device. please contact school administration if you are unable to login.</string>
+                                <string key="text">Note: This openSIS app is for Teacher
+portal functionalities and works with an
+active openSIS SaaS subscription.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Example: https://name.opensis.com" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o9m-q8-KCt">
+                                <rect key="frame" x="8" y="456" width="374" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="3fv-cH-V0b"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="scH-m0-35a"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="v6O-8q-S6V" firstAttribute="top" secondItem="vHY-TN-rcH" secondAttribute="bottom" constant="110" id="11b-9E-b80"/>
                             <constraint firstItem="scH-m0-35a" firstAttribute="trailing" secondItem="hiH-EE-tEp" secondAttribute="trailing" id="5an-7F-OaP"/>
                             <constraint firstItem="scH-m0-35a" firstAttribute="trailing" secondItem="NCQ-9e-wyj" secondAttribute="trailing" constant="16" id="5qY-CL-Tr2"/>
                             <constraint firstItem="ibf-tU-85j" firstAttribute="leading" secondItem="scH-m0-35a" secondAttribute="leading" constant="16" id="7Wg-aq-8k1"/>
+                            <constraint firstItem="CXD-wa-y9E" firstAttribute="centerX" secondItem="hiH-EE-tEp" secondAttribute="centerX" id="Ait-li-OH7"/>
                             <constraint firstItem="scH-m0-35a" firstAttribute="trailing" secondItem="v6O-8q-S6V" secondAttribute="trailing" constant="8" id="BP7-dY-a1g"/>
                             <constraint firstItem="aNN-kT-5Bm" firstAttribute="leading" secondItem="scH-m0-35a" secondAttribute="leading" constant="16" id="DvJ-pa-EED"/>
                             <constraint firstItem="v6O-8q-S6V" firstAttribute="leading" secondItem="scH-m0-35a" secondAttribute="leading" constant="8" id="IJV-A6-hkd"/>
+                            <constraint firstItem="scH-m0-35a" firstAttribute="trailing" secondItem="o9m-q8-KCt" secondAttribute="trailing" constant="8" id="L0H-DI-sBB"/>
                             <constraint firstItem="NCQ-9e-wyj" firstAttribute="leading" secondItem="scH-m0-35a" secondAttribute="leading" constant="8" id="LxT-JB-yPY"/>
-                            <constraint firstItem="NCQ-9e-wyj" firstAttribute="top" secondItem="v6O-8q-S6V" secondAttribute="bottom" constant="21" id="O8E-2V-sqS"/>
+                            <constraint firstItem="NCQ-9e-wyj" firstAttribute="top" secondItem="v6O-8q-S6V" secondAttribute="bottom" constant="46" id="O8E-2V-sqS"/>
                             <constraint firstItem="scH-m0-35a" firstAttribute="trailing" secondItem="ibf-tU-85j" secondAttribute="trailing" constant="16" id="Uxz-M4-I0h"/>
                             <constraint firstItem="hiH-EE-tEp" firstAttribute="top" secondItem="TXj-Z6-NlS" secondAttribute="top" id="VGc-QX-DqO"/>
+                            <constraint firstItem="o9m-q8-KCt" firstAttribute="leading" secondItem="scH-m0-35a" secondAttribute="leading" constant="8" id="bZr-S1-sVw"/>
                             <constraint firstAttribute="bottom" secondItem="hiH-EE-tEp" secondAttribute="bottom" id="cF6-BY-YiL"/>
                             <constraint firstItem="ibf-tU-85j" firstAttribute="top" secondItem="aNN-kT-5Bm" secondAttribute="bottom" constant="25" id="cNZ-sh-0Xn"/>
-                            <constraint firstItem="v6O-8q-S6V" firstAttribute="top" secondItem="95B-vG-5AL" secondAttribute="bottom" constant="175" id="dDn-U4-wJV"/>
-                            <constraint firstItem="95B-vG-5AL" firstAttribute="centerX" secondItem="hiH-EE-tEp" secondAttribute="centerX" id="lmT-O8-ckh"/>
+                            <constraint firstItem="o9m-q8-KCt" firstAttribute="top" secondItem="v6O-8q-S6V" secondAttribute="bottom" constant="10" id="exJ-5o-bxI"/>
+                            <constraint firstItem="CXD-wa-y9E" firstAttribute="top" secondItem="scH-m0-35a" secondAttribute="top" constant="115" id="m4p-Nx-9YX"/>
+                            <constraint firstItem="vHY-TN-rcH" firstAttribute="top" secondItem="scH-m0-35a" secondAttribute="top" constant="67" id="odK-NB-uhr"/>
                             <constraint firstItem="scH-m0-35a" firstAttribute="trailing" secondItem="aNN-kT-5Bm" secondAttribute="trailing" constant="16" id="pBQ-Ev-iZP"/>
+                            <constraint firstItem="vHY-TN-rcH" firstAttribute="centerX" secondItem="hiH-EE-tEp" secondAttribute="centerX" id="rOR-f7-tpa"/>
                             <constraint firstItem="hiH-EE-tEp" firstAttribute="leading" secondItem="TXj-Z6-NlS" secondAttribute="leading" id="tqA-ts-IbE"/>
                             <constraint firstItem="aNN-kT-5Bm" firstAttribute="top" secondItem="NCQ-9e-wyj" secondAttribute="bottom" constant="25" id="vMm-N7-g1a"/>
-                            <constraint firstItem="95B-vG-5AL" firstAttribute="top" secondItem="scH-m0-35a" secondAttribute="top" constant="65" id="yKj-pE-eGw"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="iconLogo" destination="CXD-wa-y9E" id="0vC-Yv-nwG"/>
                         <outlet property="submitButton" destination="aNN-kT-5Bm" id="jyn-dd-Lji"/>
                         <outlet property="textURL" destination="E6p-uN-a5p" id="iAE-ek-g03"/>
                         <outlet property="viewURL" destination="NCQ-9e-wyj" id="IMz-cn-NSD"/>
@@ -130,7 +156,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OpQ-Om-zbG">
-                                <rect key="frame" x="0.0" y="340" width="390" height="504"/>
+                                <rect key="frame" x="0.0" y="314" width="390" height="530"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kh0-4k-56n" customClass="TransitionButton" customModule="TransitionButton">
                                         <rect key="frame" x="16" y="264" width="358" height="50"/>
@@ -149,7 +175,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="66o-k8-BmU">
                                         <rect key="frame" x="8" y="4" width="366" height="60"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZqE-01-7tB" customClass="DTTextField" customModule="DTTextField">
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Please Enter Web Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZqE-01-7tB" customClass="DTTextField" customModule="DTTextField">
                                                 <rect key="frame" x="0.0" y="3" width="323" height="55"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -169,6 +195,9 @@
                                                 <state key="normal" backgroundImage="edit_white_24dp">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="btnEditURL:" destination="m8J-Ji-kzR" eventType="touchUpInside" id="4DT-Yu-Msi"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemYellowColor"/>
@@ -249,11 +278,13 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="elG-zz-vlh">
-                                        <rect key="frame" x="16" y="376" width="358" height="95"/>
+                                        <rect key="frame" x="16" y="376" width="358" height="63"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="95" id="S0X-AT-nEO"/>
+                                            <constraint firstAttribute="height" constant="63" id="S0X-AT-nEO"/>
                                         </constraints>
-                                        <string key="text">Note: Mobile access to PACIFIC EMIS must be turned school administrator and you must have a valid account to access PACIFIC EMIS via a mobile device. please contact school administration if you are unable to login.</string>
+                                        <string key="text">Note: This openSIS app is for Teacher
+portal functionalities and works with an
+active openSIS SaaS subscription.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -280,7 +311,7 @@
                                     <constraint firstItem="YHo-gg-FiM" firstAttribute="leading" secondItem="OpQ-Om-zbG" secondAttribute="leading" constant="8" id="BAg-2t-eKP"/>
                                     <constraint firstItem="elG-zz-vlh" firstAttribute="top" secondItem="Gv2-m2-qhj" secondAttribute="bottom" constant="15" id="KvC-yK-uta"/>
                                     <constraint firstItem="Kh0-4k-56n" firstAttribute="top" secondItem="YHo-gg-FiM" secondAttribute="bottom" constant="35" id="MJu-lx-uky"/>
-                                    <constraint firstAttribute="height" constant="504" id="MNv-b8-Vcv"/>
+                                    <constraint firstAttribute="height" constant="530" id="MNv-b8-Vcv"/>
                                     <constraint firstAttribute="trailing" secondItem="elG-zz-vlh" secondAttribute="trailing" constant="16" id="O61-QV-sCu"/>
                                     <constraint firstAttribute="trailing" secondItem="Gv2-m2-qhj" secondAttribute="trailing" constant="16" id="Pk7-R3-Wmp"/>
                                     <constraint firstItem="Kh0-4k-56n" firstAttribute="leading" secondItem="OpQ-Om-zbG" secondAttribute="leading" constant="16" id="Wyo-J9-cDA"/>
@@ -295,11 +326,28 @@
                                     <constraint firstItem="YHo-gg-FiM" firstAttribute="top" secondItem="ufI-pB-vBC" secondAttribute="bottom" constant="20" id="lPQ-4B-4j7"/>
                                 </constraints>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pecificlogo" translatesAutoresizingMaskIntoConstraints="NO" id="MeS-1B-p5s">
-                                <rect key="frame" x="-0.66666666666665719" y="108" width="391.33333333333326" height="134"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TY9-lh-U95">
+                                <rect key="frame" x="16" y="250" width="358" height="42"/>
+                                <color key="backgroundColor" name="systemOrangeColor" catalog="System" colorSpace="catalog"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="134" id="U0A-tu-SXp"/>
-                                    <constraint firstAttribute="width" constant="391" id="rkZ-7w-p6d"/>
+                                    <constraint firstAttribute="height" constant="42" id="nJQ-HG-Tvj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login-logo-bg" translatesAutoresizingMaskIntoConstraints="NO" id="MeS-1B-p5s">
+                                <rect key="frame" x="91" y="67" width="208" height="175"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="175" id="U0A-tu-SXp"/>
+                                    <constraint firstAttribute="width" constant="208" id="rkZ-7w-p6d"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xXI-3F-Zhb">
+                                <rect key="frame" x="152.66666666666666" y="115" width="85" height="85"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="85" id="3J2-e1-Kg8"/>
+                                    <constraint firstAttribute="width" constant="85" id="gRU-KY-Fxh"/>
                                 </constraints>
                             </imageView>
                         </subviews>
@@ -308,19 +356,26 @@
                         <constraints>
                             <constraint firstItem="zmr-ET-Xpv" firstAttribute="trailing" secondItem="XLX-oR-gMT" secondAttribute="trailing" id="07s-2o-LDE"/>
                             <constraint firstItem="zmr-ET-Xpv" firstAttribute="top" secondItem="54W-VA-nYd" secondAttribute="top" id="14F-WD-CKT"/>
+                            <constraint firstItem="XLX-oR-gMT" firstAttribute="trailing" secondItem="TY9-lh-U95" secondAttribute="trailing" constant="16" id="1fG-js-PeK"/>
                             <constraint firstItem="zmr-ET-Xpv" firstAttribute="leading" secondItem="XLX-oR-gMT" secondAttribute="leading" id="3Q8-sw-UiQ"/>
                             <constraint firstAttribute="bottom" secondItem="zmr-ET-Xpv" secondAttribute="bottom" id="AYQ-QX-MaA"/>
+                            <constraint firstItem="xXI-3F-Zhb" firstAttribute="top" secondItem="XLX-oR-gMT" secondAttribute="top" constant="68" id="GND-aq-LaW"/>
+                            <constraint firstItem="TY9-lh-U95" firstAttribute="top" secondItem="MeS-1B-p5s" secondAttribute="bottom" constant="8" symbolic="YES" id="I29-ed-ig9"/>
                             <constraint firstItem="OpQ-Om-zbG" firstAttribute="leading" secondItem="XLX-oR-gMT" secondAttribute="leading" id="Kkg-Pk-7wU"/>
                             <constraint firstItem="OpQ-Om-zbG" firstAttribute="trailing" secondItem="XLX-oR-gMT" secondAttribute="trailing" id="YlU-Gy-5uG"/>
-                            <constraint firstItem="OpQ-Om-zbG" firstAttribute="top" secondItem="MeS-1B-p5s" secondAttribute="bottom" constant="98" id="fhT-xE-j3G"/>
-                            <constraint firstItem="MeS-1B-p5s" firstAttribute="top" secondItem="XLX-oR-gMT" secondAttribute="top" constant="61" id="fvy-OK-dCc"/>
+                            <constraint firstItem="TY9-lh-U95" firstAttribute="leading" secondItem="XLX-oR-gMT" secondAttribute="leading" constant="16" id="epA-j5-ZI9"/>
+                            <constraint firstItem="OpQ-Om-zbG" firstAttribute="top" secondItem="MeS-1B-p5s" secondAttribute="bottom" constant="72" id="fhT-xE-j3G"/>
+                            <constraint firstItem="MeS-1B-p5s" firstAttribute="top" secondItem="XLX-oR-gMT" secondAttribute="top" constant="20" id="fvy-OK-dCc"/>
                             <constraint firstItem="MeS-1B-p5s" firstAttribute="centerX" secondItem="zmr-ET-Xpv" secondAttribute="centerX" id="hyM-A3-oj6"/>
+                            <constraint firstItem="xXI-3F-Zhb" firstAttribute="centerX" secondItem="zmr-ET-Xpv" secondAttribute="centerX" id="pWK-Zm-JGy"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="btnLogin" destination="Kh0-4k-56n" id="iKk-1W-huC"/>
                         <outlet property="btnPassShowHide" destination="C1e-Ry-IZm" id="DPB-Qt-1nl"/>
                         <outlet property="editSchoolWebURL" destination="ZqE-01-7tB" id="RVR-UI-yQS"/>
+                        <outlet property="icon" destination="xXI-3F-Zhb" id="AtE-vX-ctc"/>
+                        <outlet property="lblSchoolName" destination="TY9-lh-U95" id="tj2-dY-Osm"/>
                         <outlet property="submitButton" destination="Kh0-4k-56n" id="gQ8-86-pbl"/>
                         <outlet property="textPassword" destination="fMR-A5-HRo" id="edm-kE-03F"/>
                         <outlet property="textUserName" destination="iQp-dp-Ruw" id="e9J-UC-ceW"/>
@@ -490,7 +545,8 @@
     <resources>
         <image name="edit_white_24dp" width="24" height="24"/>
         <image name="login-bg-narrow" width="1125" height="2436"/>
-        <image name="pecificlogo" width="821" height="453"/>
+        <image name="login-logo-bg" width="924" height="924"/>
+        <image name="login-logo-full" width="482" height="247"/>
         <image name="toolbar" width="1163" height="140"/>
         <image name="visibility_white_48dp" width="48" height="48"/>
         <systemColor name="systemBackgroundColor">

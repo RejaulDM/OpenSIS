@@ -16,7 +16,7 @@ class GradeController: UIViewController,UITableViewDelegate,UITableViewDataSourc
     
     @IBOutlet weak var tableView: UITableView!
     
-    var  storeSchoolID = UserDefaults.standard.string(forKey: "Key_SelectSchoolID") ?? ""
+    var  storeSchoolID = UserDefaults.standard.string(forKey: "Key_SchoolID") ?? ""
     var  storeEmail = UserDefaults.standard.string(forKey: "Key_Email") ?? ""
     var  storeTenantID = UserDefaults.standard.string(forKey: "Key_TenantId") ?? ""
     var  storeTenantName = UserDefaults.standard.string(forKey: "Key_TenantName") ?? ""
@@ -139,9 +139,11 @@ extension GradeController{
             "tenantId":storeTenantID,
             "schoolId":storeSchoolID,
             "academicYear":storeAcademicYears,
+            "_academicYear": storeAcademicYears,
             "markingPeriodStartDate":strorePeriodStartDate,
             "markingPeriodEndDate":strorePeriodEndDate
           ]as [String : Any];
+        
         
         print("Param Grade==",parameters)
         let jsonData = try! JSONSerialization.data(withJSONObject: parameters, options: JSONSerialization.WritingOptions.prettyPrinted)

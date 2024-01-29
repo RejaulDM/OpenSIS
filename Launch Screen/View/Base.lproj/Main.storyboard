@@ -27,7 +27,7 @@
                                     <constraint firstAttribute="height" constant="390" id="Vuw-hW-wAG"/>
                                 </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pecificlogo" translatesAutoresizingMaskIntoConstraints="NO" id="vWN-Iy-X7g">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vWN-Iy-X7g">
                                 <rect key="frame" x="115" y="342" width="160" height="160"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="160" id="1gZ-7h-kl3"/>
@@ -56,7 +56,6 @@
     </scenes>
     <resources>
         <image name="login-bg-narrow" width="1125" height="2436"/>
-        <image name="pecificlogo" width="821" height="453"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

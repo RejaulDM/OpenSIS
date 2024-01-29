@@ -16,7 +16,7 @@ class GradeDetailsController: UIViewController,UITableViewDelegate,UITableViewDa
     
     @IBOutlet weak var tableView: UITableView!
     
-    var  storeSchoolID = UserDefaults.standard.string(forKey: "Key_SelectSchoolID") ?? ""
+    var  storeSchoolID = UserDefaults.standard.string(forKey: "Key_SchoolID") ?? ""
     var  storeEmail = UserDefaults.standard.string(forKey: "Key_Email") ?? ""
     var  storeTenantID = UserDefaults.standard.string(forKey: "Key_TenantId") ?? ""
     var  storeTenantName = UserDefaults.standard.string(forKey: "Key_TenantName") ?? ""
@@ -127,7 +127,8 @@ extension GradeDetailsController{
             "_token":storeToken,
             "tenantId":storeTenantID,
             "schoolId":storeSchoolID,
-            "academicYear":storeAcademicYears
+            "academicYear":storeAcademicYears,
+            "_academicYear": storeAcademicYears
            ]as [String : Any];
         
         

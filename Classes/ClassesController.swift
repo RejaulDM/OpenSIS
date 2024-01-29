@@ -32,7 +32,7 @@ class ClassesController: UIViewController,UITableViewDelegate,UITableViewDataSou
     var strorePeriodEndDate = UserDefaults.standard.string(forKey: "Key_PeriodEndDate") ?? ""
     
     let BaseURL = UserDefaults.standard.string(forKey: "Key_BaseURL") ?? ""
-    
+    let storeAcademicYears = UserDefaults.standard.string(forKey: "Key_AcademicYears") ?? ""
     
     var arrMyClassesList = [JSON]()
     
@@ -170,6 +170,7 @@ extension ClassesController{
             "markingPeriodEndDate": strorePeriodEndDate,
             "membershipId":"4",
             "schoolId": storeSchoolID,
+            "_academicYear": storeAcademicYears,
             "staffId":storeUserID,
             "tenantId":storeTenantID,
             "_tenantName":storeTenantName,
@@ -220,6 +221,8 @@ extension ClassesController{
                             let courseSectionName = val["courseSectionName"].stringValue
                            let courseSectionId = val["courseSectionId"].stringValue
                            let courseId = val["courseId"].stringValue
+                        let qtrMarkingPeriodId = val["qtrMarkingPeriodId"].stringValue
+                        let attcatId = val["attendanceCategoryId"].stringValue
                             let courseTitle = val["courseTitle"].stringValue
                             let meetingDays = val["meetingDays"].stringValue
                             let courseGradeLevel = val["courseGradeLevel"].stringValue
@@ -240,7 +243,7 @@ extension ClassesController{
                                let rooms = courseFSchedule["rooms"].dictionaryValue
                                let titleroom = rooms["title"]?.stringValue
                                
-                               self.selectedCourseList.append(SelectedCourseList(CourseSectionName: String() + courseSectionName, CourseTitle: String() + courseTitle, MeetingDays: String() + meetingDays, CourseGradeLevel: String() + courseGradeLevel, PeriodTitle: String() + (periodTitle ?? " "), PeriodStartTime: String() + (periodStartTime ?? " "), RoomTitle: String() + (titleroom ?? " "), CourseSectionID: String() + courseSectionId, CourseID: String() + courseId,ScheduleType: String() + scheduleType,attendanceTaken: String() + ""))
+                               self.selectedCourseList.append(SelectedCourseList(CourseSectionName: String() + courseSectionName, CourseTitle: String() + courseTitle, MeetingDays: String() + meetingDays, CourseGradeLevel: String() + courseGradeLevel, PeriodTitle: String() + (periodTitle ?? " "), PeriodStartTime: String() + (periodStartTime ?? " "), RoomTitle: String() + (titleroom ?? " "), CourseSectionID: String() + courseSectionId, CourseID: String() + courseId,ScheduleType: String() + scheduleType,attendanceTaken: String() + "",attCatID: String() + "",markingPeriod: qtrMarkingPeriodId))
                                
                            }else{
                                
@@ -252,7 +255,7 @@ extension ClassesController{
                                let rooms = courseFSchedule["rooms"]?.dictionaryValue
                                let titleroom = rooms?["title"]?.stringValue
                                
-                               self.selectedCourseList.append(SelectedCourseList(CourseSectionName: String() + courseSectionName, CourseTitle: String() + courseTitle, MeetingDays: String() + meetingDays, CourseGradeLevel: String() + courseGradeLevel, PeriodTitle: String() + (periodTitle ?? " "), PeriodStartTime: String() + (periodStartTime ?? " "), RoomTitle: String() + (titleroom ?? " "), CourseSectionID: String() + courseSectionId, CourseID: String() + courseId,ScheduleType: String() + scheduleType,attendanceTaken: String() + ""))
+                               self.selectedCourseList.append(SelectedCourseList(CourseSectionName: String() + courseSectionName, CourseTitle: String() + courseTitle, MeetingDays: String() + meetingDays, CourseGradeLevel: String() + courseGradeLevel, PeriodTitle: String() + (periodTitle ?? " "), PeriodStartTime: String() + (periodStartTime ?? " "), RoomTitle: String() + (titleroom ?? " "), CourseSectionID: String() + courseSectionId, CourseID: String() + courseId,ScheduleType: String() + scheduleType,attendanceTaken: String() + "",attCatID: String() + "",markingPeriod: qtrMarkingPeriodId))
                                
                            }
                         //}

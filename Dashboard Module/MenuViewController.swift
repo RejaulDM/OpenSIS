@@ -44,7 +44,7 @@ class MenuViewController: UIViewController{
     var indexID = 0
     
     var strCustomerId = UserDefaults.standard.string(forKey: "KeyCustomerID") ?? ""
-    var  storeName = UserDefaults.standard.string(forKey: "Key_Name") ?? ""
+    var  storeName = UserDefaults.standard.string(forKey: "Key_FullName") ?? ""
     
     var storeUserPhoto = UserDefaults.standard.string(forKey: "Key_UserPhoto") ?? ""
     

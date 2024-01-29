@@ -13,7 +13,7 @@ import SwiftyJSON
 
 class InsideAssignmentCreateController: UIViewController,UITableViewDelegate,UITableViewDataSource,UIGestureRecognizerDelegate {
 
-    var  storeSchoolID = UserDefaults.standard.string(forKey: "Key_SelectSchoolID") ?? ""
+    var  storeSchoolID = UserDefaults.standard.string(forKey: "Key_SchoolID") ?? ""
     var  storeEmail = UserDefaults.standard.string(forKey: "Key_Email") ?? ""
     var  storeTenantID = UserDefaults.standard.string(forKey: "Key_TenantId") ?? ""
     var  storeTenantName = UserDefaults.standard.string(forKey: "Key_TenantName") ?? ""
@@ -36,7 +36,7 @@ class InsideAssignmentCreateController: UIViewController,UITableViewDelegate,UIT
     
     var assignTypeID = ""
     var courseSecID = ""
-   
+    var assignmentID = ""
 
     
     @IBOutlet weak var tableView: UITableView!
@@ -141,7 +141,7 @@ class InsideAssignmentCreateController: UIViewController,UITableViewDelegate,UIT
         for view in customView.subviews {
             view.removeFromSuperview()
         }
-        guard let cell = sender.superview?.superview as? InsideAssignmentCreateCell else {
+        guard let cell = sender.superview?.superview?.superview as? InsideAssignmentCreateCell else {
             print("error in sender value")
             return
         }
@@ -217,32 +217,32 @@ extension InsideAssignmentCreateController:BtnRightOptionAss {
         print("\(index) is clicked============ ")
         
         let item = arrAssignment[index]
-            let assignmentTypeId = item["assignmentTypeId"].stringValue
-        let courseSecId = item["courseSectionId"].stringValue
+        let item1 = selectAllAssignment[index]
+        assignmentID = item1.assignmentId!
+        assignTypeID = item1.assignmentTypeId!
+        courseSecID = item1.courseSectionId!
+        print("assignTypeID==\(assignTypeID)","courseSecID==\(courseSecID)","assignmentID==\(assignmentID)")
         
-        assignTypeID = assignmentTypeId
-        courseSecID = courseSecId
-        print("\(assignTypeID)assignTypeID==","\(courseSecID)courseSecID==")
-        
-        let getassign = item["assignment"].arrayValue
+        //let getassign = item["assignment"].arrayValue
         //let assvalue = getassign[0]
         
-        let assignmentTitle = item["title"].stringValue
-        let points = item["points"].stringValue
-        let assignmentDate = item["assignmentDate"].stringValue
-        let dueDate = item["dueDate"].stringValue
-        let assignmentDescription = item["assignmentDescription"].stringValue
+        let assignmentTitle = item1.assignmentTitle
+        let points = item1.points
+        let assignmentDate = item1.assignmentDate
+        let dueDate = item1.dueDate
+        let assignmentDescription = item1.assignmentDescription
+        let staffId = item1.staffId
         let weightage = item["weightage"].stringValue
         
-        
+        UserDefaults.standard.set(assignmentID, forKey: "Key_assignmentID")
         UserDefaults.standard.set(weightage, forKey: "Key_Weightage")
-        
         UserDefaults.standard.set(assignmentTitle, forKey: "Key_AssignmentTitle")
         UserDefaults.standard.set(points, forKey: "Key_Points")
-        UserDefaults.standard.set(assignmentTypeId, forKey: "Key_AssignmentTypeId")
+        UserDefaults.standard.set(assignTypeID, forKey: "Key_AssignmentTypeId")
         UserDefaults.standard.set(assignmentDate, forKey: "Key_AssignmentDate")
         UserDefaults.standard.set(dueDate, forKey: "Key_DueDate")
         UserDefaults.standard.set(assignmentDescription, forKey: "Key_AssignmentDescription")
+        UserDefaults.standard.set(staffId, forKey: "Key_staffId")
         
     }
 }
@@ -264,12 +264,10 @@ extension InsideAssignmentCreateController{
                 "tenantId":storeTenantID,
                 "schoolId":storeSchoolID,
                 "academicYear":storeAcademicYears,
+            "_academicYear":storeAcademicYears,
                 "markingPeriodStartDate":strorePeriodStartDate,
                 "markingPeriodEndDate":strorePeriodEndDate
            ]as [String : Any];
-        
-        
-        
         print("Param Assignment==",parameters)
         let jsonData = try! JSONSerialization.data(withJSONObject: parameters, options: JSONSerialization.WritingOptions.prettyPrinted)
         let urlString = BaseURL + "StaffPortalAssignment/getAllAssignmentType"
@@ -290,8 +288,9 @@ extension InsideAssignmentCreateController{
                 
                 let status = json["_failure"].stringValue
                 let message = json["_message"].stringValue
-                
+                selectAllAssignment.removeAll()
                  if status == "false"{
+                     
                      let assignment = json["assignmentTypeList"].arrayValue
                      
                      self.arrAssignment = assignment
@@ -312,10 +311,12 @@ extension InsideAssignmentCreateController{
                          let createdOn = assvalue["createdOn"].stringValue
                          let dueDate = assvalue["dueDate"].stringValue
                          let point = assvalue["points"].stringValue
-                         let staffId = assvalue["staffId"].stringValue
+                         let staffid = assvalue["staffId"].stringValue
                          let courseSecId = assvalue["courseSectionId"].stringValue
                          
-                         selectAllAssignment.append(SelectedAssignment(assignmentTitle: String() + assignmentTitle, assignmentDescription: String() + assignmentDescription, assignmentTypeId: String() + assignTypeId, assignmentId: String() + assignmentId, courseSectionId: String() + courseSecId, points: String() + point, assignmentDate: String() + assignmentDate, dueDate: String() + dueDate))
+                         print("assignmentId==",assignmentId)
+                         print("assignTypeId===",assignTypeId)
+                         selectAllAssignment.append(SelectedAssignment(assignmentTitle: String() + assignmentTitle, assignmentDescription: String() + assignmentDescription, assignmentTypeId: String() + assignTypeId, assignmentId: String() + assignmentId, courseSectionId: String() + courseSecId, points: String() + point, assignmentDate: String() + assignmentDate, dueDate: String() + dueDate, staffId: String() + staffid))
                      }
                    }else{
                     self.displayAlertMessage(messageToDisplay: message)
@@ -343,24 +344,25 @@ extension InsideAssignmentCreateController{
         SVProgressHUD.show()
        
         let parameters = [
-            "assignmentType":[
-                "assignmentTypeId":assignTypeID,
+            "assignment":[
                 "courseSectionId":courseSecID,
+                "assignmentId":assignmentID,
+                "assignmentTypeId":assignTypeID,
                 "schoolId":storeSchoolID,
                 "tenantId":storeTenantID
-              ],
-            "_tenantName":storeTenantName,
-            "_userName":storeName,
-            "_token":storeToken,
-            "tenantId":storeTenantID,
-            "schoolId":storeSchoolID
+                ],
+                "_tenantName":storeTenantName,
+                "_userName":storeName,
+                "_token":storeToken,
+                "_academicYear":storeAcademicYears,
+                "tenantId":storeTenantID,
+                "schoolId":storeSchoolID
            ]as [String : Any];
-        
-        
         
         print("Param Assign Delete==",parameters)
         let jsonData = try! JSONSerialization.data(withJSONObject: parameters, options: JSONSerialization.WritingOptions.prettyPrinted)
-        let urlString = BaseURL + "StaffPortalAssignment/deleteAssignmentType"
+        let urlString = BaseURL + "StaffPortalAssignment/deleteAssignment"
+        //StaffPortalAssignment/deleteAssignment
         print("URL Assign Delete==",urlString)
         let url = URL(string: urlString)!
         var request = URLRequest(url: url)

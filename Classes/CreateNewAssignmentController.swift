@@ -14,14 +14,11 @@ class CreateNewAssignmentController: UIViewController {
     
     
     @IBOutlet weak var textAssignmentName: UITextField!
-    
-    
     @IBOutlet weak var textTotalPercentage: UITextField!
-    
     @IBOutlet weak var viewBack: UIView!
     
     
-    var  storeSchoolID = UserDefaults.standard.string(forKey: "Key_SelectSchoolID") ?? ""
+    var  storeSchoolID = UserDefaults.standard.string(forKey: "Key_SchoolID") ?? ""
     var  storeEmail = UserDefaults.standard.string(forKey: "Key_Email") ?? ""
     var  storeTenantID = UserDefaults.standard.string(forKey: "Key_TenantId") ?? ""
     var  storeTenantName = UserDefaults.standard.string(forKey: "Key_TenantName") ?? ""
@@ -41,9 +38,14 @@ class CreateNewAssignmentController: UIViewController {
     var  storeAssignmentDescription = UserDefaults.standard.string(forKey: "Key_AssignmentDescription") ?? ""
 
     var storeAssignType = UserDefaults.standard.string(forKey: "Key_AssignType") ?? ""
+    var staffId = UserDefaults.standard.string(forKey: "Key_staffId") ?? ""
+    var assignmentID = UserDefaults.standard.string(forKey: "Key_assignmentID") ?? ""
     
     var  storeWeightage = UserDefaults.standard.string(forKey: "Key_Weightage") ?? ""
     let BaseURL = UserDefaults.standard.string(forKey: "Key_BaseURL") ?? ""
+    let storeMarkingPeriod = UserDefaults.standard.string(forKey: "Key_MarkingPeriod") ?? ""
+    
+    var getCurrentDate = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,6 +65,12 @@ class CreateNewAssignmentController: UIViewController {
         viewBack.layer.borderColor = #colorLiteral(red: 0.2196078449, green: 0.007843137719, blue: 0.8549019694, alpha: 1)
         viewBack.layer.borderWidth = 1
         viewBack.layer.cornerRadius = 4
+        
+        let getDatea = Date()
+        let getFormatter = DateFormatter()
+        getFormatter.dateFormat = "yyyy-MM-dd"
+        let getResult = getFormatter.string(from: getDatea)
+        print("Get current Date is===== \(getResult)")
         
         
         
@@ -103,25 +111,27 @@ class CreateNewAssignmentController: UIViewController {
     func callAPICreateAssignment(){
         
         SVProgressHUD.show()
-       let parameters = [
+        
+      let parameters =   [
         "assignmentType":[
             "title":textAssignmentName.text!,
             "weightage":textTotalPercentage.text!,
             "courseSectionId":stroreCourseSectionID,
-            "markingPeriodId":0,
-            "createdBy":"392a89a6-ff74-47c2-ab69-04ae19bcaeb5",
+            "markingPeriodId":storeMarkingPeriod,
+            "createdBy":"f2bd0177-3e85-467d-b838-a4cba18aa791",
             "schoolId":storeSchoolID,
             "tenantId":storeTenantID
-          ],
-        "_tenantName":storeTenantName,
-        "_userName":storeName,
-        "_token":storeToken,
-        "tenantId":storeTenantID,
-        "schoolId":storeSchoolID,
-        "markingPeriodStartDate":"2023-02-01T00:00:00",
-        "markingPeriodEndDate":"2023-04-30T00:00:00"
-        
-       ]as [String : Any];
+            ],
+            "_tenantName":storeTenantName,
+            "_userName":storeName,
+            "_token":storeToken,
+            "_academicYear":storeAcademicYears,
+            "tenantId":storeTenantID,
+            "schoolId":storeSchoolID,
+            "markingPeriodStartDate":strorePeriodStartDate,
+            "markingPeriodEndDate":strorePeriodEndDate
+       
+      ]as [String : Any];
         print("Param addAssignmentType==",parameters)
         let jsonData = try! JSONSerialization.data(withJSONObject: parameters, options: JSONSerialization.WritingOptions.prettyPrinted)
         let urlString = BaseURL + "StaffPortalAssignment/addAssignmentType"
@@ -177,23 +187,29 @@ class CreateNewAssignmentController: UIViewController {
         
         SVProgressHUD.show()
        let parameters = [
-        "assignmentType":[
-            "title":textAssignmentName.text!,
-            "weightage":textTotalPercentage.text!,
+            "assignment":[
+            "assignmentTitle":textAssignmentName.text!,
+            "points":textTotalPercentage.text!,
             "assignmentTypeId":storeAssignmentTypeId,
-            "courseSectionId":stroreCourseSectionID,
-            "markingPeriodId":0,
-            "updatedBy":"392a89a6-ff74-47c2-ab69-04ae19bcaeb5",
+            "assignmentDate":storeAssignmentDate,
+            "dueDate":storeDueDate,
+            "assignmentDescription":"",
             "schoolId":storeSchoolID,
-            "tenantId":"1e93c7bf-0fae-42bb-9e09-a1cedc8c0355"
+            "courseSectionId":stroreCourseSectionID,
+            "tenantId":storeTenantID,
+            "staffId": staffId,
+            "assignmentId":assignmentID,
+            "updatedBy":"f2bd0177-3e85-467d-b838-a4cba18aa791"
             ],
             "_tenantName":storeTenantName,
             "_userName":storeName,
             "_token":storeToken,
+            "_academicYear":storeAcademicYears,
             "tenantId":storeTenantID,
             "schoolId":storeSchoolID
             ]as [String : Any];
         
+       /* "assignment":{"assignmentTitle":"tt","points":100,"assignmentTypeId":22,"assignmentDate":"2023-11-03","dueDate":"2023-11-03","assignmentDescription":"","schoolId":1,"courseSectionId":18,"tenantId":"be119c81-7503-436c-9b4b-68f34e3657e8","staffId":"2","assignmentId":31,"updatedBy":"f2bd0177-3e85-467d-b838-a4cba18aa791"},"_tenantName":"bsshighschool","_userName":"Tim","_token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImN0eSI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImJzc2hpZ2hzY2hvb2xUaW18dGltY29va0B5b3BtYWlsLmNvbXxiZTExOWM4MS03NTAzLTQzNmMtOWI0Yi02OGYzNGUzNjU3ZTgiLCJuYmYiOjE2OTkwODAwMTQsImV4cCI6MTY5OTA4MTgxNCwiaWF0IjoxNjk5MDgwMDE0fQ.VVJDpq1j8VufPZiMm8gNedgW7kA7V_DmGTTKGWOgM4w","_academicYear":2023,"tenantId":"be119c81-7503-436c-9b4b-68f34e3657e8","schoolId":1}*/
         
         print("Param Update==",parameters)
         let jsonData = try! JSONSerialization.data(withJSONObject: parameters, options: JSONSerialization.WritingOptions.prettyPrinted)

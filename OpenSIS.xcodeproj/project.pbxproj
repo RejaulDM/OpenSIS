@@ -13,6 +13,10 @@
 		D01937F22988E9670072D481 /* GradeDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01937F12988E9670072D481 /* GradeDetailsCell.swift */; };
 		D01937F42988E9850072D481 /* GradeDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01937F32988E9850072D481 /* GradeDetailsController.swift */; };
 		D01A237429693FE300475F91 /* SchoolsDetailsWashInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01A237329693FE300475F91 /* SchoolsDetailsWashInfo.swift */; };
+		D04663662A1340E2009D2FAD /* GradeInputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04663652A1340E2009D2FAD /* GradeInputController.swift */; };
+		D04663682A135AA7009D2FAD /* GradeInputContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04663672A135AA7009D2FAD /* GradeInputContainer.swift */; };
+		D046636A2A1387C3009D2FAD /* LatterGradeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04663692A1387C3009D2FAD /* LatterGradeController.swift */; };
+		D046636C2A138800009D2FAD /* LatterGradeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D046636B2A138800009D2FAD /* LatterGradeCell.swift */; };
 		D04B9846299600A6001E0FF1 /* AssignmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04B9845299600A5001E0FF1 /* AssignmentCell.swift */; };
 		D067CBB329921D0300893FF6 /* GradeBookConfiguarionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D067CBB229921D0300893FF6 /* GradeBookConfiguarionController.swift */; };
 		D06B0652299EB19100395065 /* InsideAssignmentCreateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06B0651299EB19100395065 /* InsideAssignmentCreateController.swift */; };
@@ -55,6 +59,8 @@
 		D07357A6293DEFCD005EB7F5 /* ClassOverviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07357A5293DEFCD005EB7F5 /* ClassOverviewCell.swift */; };
 		D07357A8293DF004005EB7F5 /* ClassOverviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07357A7293DF004005EB7F5 /* ClassOverviewController.swift */; };
 		D074C4A8298968F400DE77CE /* CalendarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D074C4A7298968F400DE77CE /* CalendarController.swift */; };
+		D075C28E2A71178A007D227C /* MissingAttendanceListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D075C28D2A71178A007D227C /* MissingAttendanceListController.swift */; };
+		D075C2902A7117B5007D227C /* MissingAttendanceListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D075C28F2A7117B5007D227C /* MissingAttendanceListCell.swift */; };
 		D076AE2C293687C900E248EE /* SchoolsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D076AE2B293687C900E248EE /* SchoolsController.swift */; };
 		D076AE2E293687ED00E248EE /* Schools.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D076AE2D293687ED00E248EE /* Schools.storyboard */; };
 		D076AE3029368FF900E248EE /* SchoolsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D076AE2F29368FF900E248EE /* SchoolsCell.swift */; };
@@ -83,11 +89,19 @@
 		D07A9E552977C93800CC9D70 /* OverviewDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07A9E542977C93800CC9D70 /* OverviewDetailsController.swift */; };
 		D07A9E572977C99C00CC9D70 /* ClassesContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07A9E562977C99C00CC9D70 /* ClassesContainer.swift */; };
 		D07B8B852969ED82007871E9 /* AllStudentsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07B8B842969ED82007871E9 /* AllStudentsCell.swift */; };
+		D07BF16C2A15EA7C007AB3C6 /* SelectLatterGradeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07BF16A2A15EA7C007AB3C6 /* SelectLatterGradeController.swift */; };
+		D07BF16D2A15EA7C007AB3C6 /* SelectLatterGradeController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D07BF16B2A15EA7C007AB3C6 /* SelectLatterGradeController.xib */; };
 		D07EC1BF299B4A750037BB08 /* PopupSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07EC1BE299B4A750037BB08 /* PopupSearchController.swift */; };
 		D08047B0297D8460003429E9 /* AttendanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08047AF297D8460003429E9 /* AttendanceController.swift */; };
 		D08047B2297D8BD3003429E9 /* AttendanceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08047B1297D8BD3003429E9 /* AttendanceCell.swift */; };
 		D08E8DE32935E67700DC4E61 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08E8DE22935E67700DC4E61 /* BaseViewController.swift */; };
 		D08E8DE52935E68500DC4E61 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08E8DE42935E68400DC4E61 /* MenuViewController.swift */; };
+		D0927A182A11F7E300C72C82 /* GradeDashboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0927A172A11F7E300C72C82 /* GradeDashboardController.swift */; };
+		D0927A1C2A11F9C900C72C82 /* GradeContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0927A1B2A11F9C900C72C82 /* GradeContainer.swift */; };
+		D09A36A02A14981000E28F86 /* PercentGradeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09A369F2A14981000E28F86 /* PercentGradeCell.swift */; };
+		D09A36A22A14982400E28F86 /* PercentGradeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09A36A12A14982400E28F86 /* PercentGradeController.swift */; };
+		D0C2CB482A6FD5D300A603AA /* NotificationMissingAttendanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C2CB472A6FD5D300A603AA /* NotificationMissingAttendanceController.swift */; };
+		D0C2CB4A2A6FD61000A603AA /* NotificationMissingAttendanceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C2CB492A6FD61000A603AA /* NotificationMissingAttendanceCell.swift */; };
 		D0DC10F029702D1600C524EB /* ScheduleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0DC10EF29702D1600C524EB /* ScheduleCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -120,6 +134,10 @@
 		D01937F12988E9670072D481 /* GradeDetailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeDetailsCell.swift; sourceTree = "<group>"; };
 		D01937F32988E9850072D481 /* GradeDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeDetailsController.swift; sourceTree = "<group>"; };
 		D01A237329693FE300475F91 /* SchoolsDetailsWashInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolsDetailsWashInfo.swift; sourceTree = "<group>"; };
+		D04663652A1340E2009D2FAD /* GradeInputController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeInputController.swift; sourceTree = "<group>"; };
+		D04663672A135AA7009D2FAD /* GradeInputContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeInputContainer.swift; sourceTree = "<group>"; };
+		D04663692A1387C3009D2FAD /* LatterGradeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatterGradeController.swift; sourceTree = "<group>"; };
+		D046636B2A138800009D2FAD /* LatterGradeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatterGradeCell.swift; sourceTree = "<group>"; };
 		D04B9845299600A5001E0FF1 /* AssignmentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentCell.swift; sourceTree = "<group>"; };
 		D067CBB229921D0300893FF6 /* GradeBookConfiguarionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeBookConfiguarionController.swift; sourceTree = "<group>"; };
 		D06B0651299EB19100395065 /* InsideAssignmentCreateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsideAssignmentCreateController.swift; sourceTree = "<group>"; };
@@ -162,6 +180,8 @@
 		D07357A5293DEFCD005EB7F5 /* ClassOverviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassOverviewCell.swift; sourceTree = "<group>"; };
 		D07357A7293DF004005EB7F5 /* ClassOverviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassOverviewController.swift; sourceTree = "<group>"; };
 		D074C4A7298968F400DE77CE /* CalendarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarController.swift; sourceTree = "<group>"; };
+		D075C28D2A71178A007D227C /* MissingAttendanceListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissingAttendanceListController.swift; sourceTree = "<group>"; };
+		D075C28F2A7117B5007D227C /* MissingAttendanceListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissingAttendanceListCell.swift; sourceTree = "<group>"; };
 		D076AE2B293687C900E248EE /* SchoolsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolsController.swift; sourceTree = "<group>"; };
 		D076AE2D293687ED00E248EE /* Schools.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Schools.storyboard; sourceTree = "<group>"; };
 		D076AE2F29368FF900E248EE /* SchoolsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolsCell.swift; sourceTree = "<group>"; };
@@ -194,11 +214,19 @@
 		D07A9E542977C93800CC9D70 /* OverviewDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewDetailsController.swift; sourceTree = "<group>"; };
 		D07A9E562977C99C00CC9D70 /* ClassesContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassesContainer.swift; sourceTree = "<group>"; };
 		D07B8B842969ED82007871E9 /* AllStudentsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllStudentsCell.swift; sourceTree = "<group>"; };
+		D07BF16A2A15EA7C007AB3C6 /* SelectLatterGradeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectLatterGradeController.swift; sourceTree = "<group>"; };
+		D07BF16B2A15EA7C007AB3C6 /* SelectLatterGradeController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectLatterGradeController.xib; sourceTree = "<group>"; };
 		D07EC1BE299B4A750037BB08 /* PopupSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupSearchController.swift; sourceTree = "<group>"; };
 		D08047AF297D8460003429E9 /* AttendanceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceController.swift; sourceTree = "<group>"; };
 		D08047B1297D8BD3003429E9 /* AttendanceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceCell.swift; sourceTree = "<group>"; };
 		D08E8DE22935E67700DC4E61 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		D08E8DE42935E68400DC4E61 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		D0927A172A11F7E300C72C82 /* GradeDashboardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeDashboardController.swift; sourceTree = "<group>"; };
+		D0927A1B2A11F9C900C72C82 /* GradeContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeContainer.swift; sourceTree = "<group>"; };
+		D09A369F2A14981000E28F86 /* PercentGradeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PercentGradeCell.swift; sourceTree = "<group>"; };
+		D09A36A12A14982400E28F86 /* PercentGradeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PercentGradeController.swift; sourceTree = "<group>"; };
+		D0C2CB472A6FD5D300A603AA /* NotificationMissingAttendanceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationMissingAttendanceController.swift; sourceTree = "<group>"; };
+		D0C2CB492A6FD61000A603AA /* NotificationMissingAttendanceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationMissingAttendanceCell.swift; sourceTree = "<group>"; };
 		D0DC10EF29702D1600C524EB /* ScheduleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleCell.swift; sourceTree = "<group>"; };
 		E772DE2B6A7F3A43666BB34A /* Pods-OpenSIS-OpenSISUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenSIS-OpenSISUITests.debug.xcconfig"; path = "Target Support Files/Pods-OpenSIS-OpenSISUITests/Pods-OpenSIS-OpenSISUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -305,6 +333,10 @@
 			isa = PBXGroup;
 			children = (
 				D06DCD39292E46B000DB6C3E /* Dashboard.swift */,
+				D0C2CB472A6FD5D300A603AA /* NotificationMissingAttendanceController.swift */,
+				D0C2CB492A6FD61000A603AA /* NotificationMissingAttendanceCell.swift */,
+				D075C28D2A71178A007D227C /* MissingAttendanceListController.swift */,
+				D075C28F2A7117B5007D227C /* MissingAttendanceListCell.swift */,
 				D07800E629308E620028995E /* DashboardTodayClassCell.swift */,
 				D07EC1BE299B4A750037BB08 /* PopupSearchController.swift */,
 				D06C2E88299CDDBC001A18D7 /* SearchPopupDash.swift */,
@@ -335,12 +367,16 @@
 				D079F9442987967400E369D9 /* AttendanceTextRemarks.swift */,
 				D079F9452987967400E369D9 /* AttendanceTextRemarks.xib */,
 				D07A9E562977C99C00CC9D70 /* ClassesContainer.swift */,
+				D0927A172A11F7E300C72C82 /* GradeDashboardController.swift */,
+				D04663652A1340E2009D2FAD /* GradeInputController.swift */,
+				D0927A1B2A11F9C900C72C82 /* GradeContainer.swift */,
 				D079F9482987BEC400E369D9 /* GradeController.swift */,
 				D079F94A2987D49700E369D9 /* GradeCell.swift */,
 				D01937F12988E9670072D481 /* GradeDetailsCell.swift */,
 				D01937F32988E9850072D481 /* GradeDetailsController.swift */,
 				D067CBB229921D0300893FF6 /* GradeBookConfiguarionController.swift */,
 				D06DFCA729926E3A00A9FF27 /* QuarterGradeBookCell.swift */,
+				D07BF1692A15E63A007AB3C6 /* Grade Input */,
 				D06DFCA929926E6D00A9FF27 /* SemesterGradeBookCell.swift */,
 				D06FE6422994CD6300B3B818 /* QuaterGradeBookInputController.swift */,
 				D06FE6432994CD6300B3B818 /* QuaterGradeBookInputController.xib */,
@@ -473,6 +509,28 @@
 			path = OpenSISUITests;
 			sourceTree = "<group>";
 		};
+		D07BF1692A15E63A007AB3C6 /* Grade Input */ = {
+			isa = PBXGroup;
+			children = (
+				D04663672A135AA7009D2FAD /* GradeInputContainer.swift */,
+				D04663692A1387C3009D2FAD /* LatterGradeController.swift */,
+				D046636B2A138800009D2FAD /* LatterGradeCell.swift */,
+				D09A369F2A14981000E28F86 /* PercentGradeCell.swift */,
+				D09A36A12A14982400E28F86 /* PercentGradeController.swift */,
+				D07BF16E2A15EA88007AB3C6 /* Select Letter Grade Popup */,
+			);
+			path = "Grade Input";
+			sourceTree = "<group>";
+		};
+		D07BF16E2A15EA88007AB3C6 /* Select Letter Grade Popup */ = {
+			isa = PBXGroup;
+			children = (
+				D07BF16A2A15EA7C007AB3C6 /* SelectLatterGradeController.swift */,
+				D07BF16B2A15EA7C007AB3C6 /* SelectLatterGradeController.xib */,
+			);
+			path = "Select Letter Grade Popup";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -590,6 +648,7 @@
 				D06FA10B298CC05000FB31F8 /* MarkingPeriods.storyboard in Resources */,
 				D06DCD5C292E4DE600DB6C3E /* Dashboard.storyboard in Resources */,
 				D076AE2E293687ED00E248EE /* Schools.storyboard in Resources */,
+				D07BF16D2A15EA7C007AB3C6 /* SelectLatterGradeController.xib in Resources */,
 				D07156A7298810100010306D /* Calendar.storyboard in Resources */,
 				D079F9472987967400E369D9 /* AttendanceTextRemarks.xib in Resources */,
 				D06ED2862969906B00590FD6 /* Students.storyboard in Resources */,
@@ -733,7 +792,9 @@
 				D08047B0297D8460003429E9 /* AttendanceController.swift in Sources */,
 				D076AE342936986000E248EE /* ClassesCell.swift in Sources */,
 				D06DFCAA29926E6D00A9FF27 /* SemesterGradeBookCell.swift in Sources */,
+				D0927A182A11F7E300C72C82 /* GradeDashboardController.swift in Sources */,
 				D06ED4AE296EE423003AAA60 /* ScheduleController.swift in Sources */,
+				D0C2CB482A6FD5D300A603AA /* NotificationMissingAttendanceController.swift in Sources */,
 				D0795672298A6635007452C7 /* CalendarEventCell.swift in Sources */,
 				D07A9E572977C99C00CC9D70 /* ClassesContainer.swift in Sources */,
 				D06D53EB29294B31004A469B /* Data.swift in Sources */,
@@ -744,6 +805,7 @@
 				D06D53E929294B2A004A469B /* Colors.swift in Sources */,
 				D079F9492987BEC400E369D9 /* GradeController.swift in Sources */,
 				D07A43BE299817E40044DA97 /* CreateNewAssignmentController.swift in Sources */,
+				D075C2902A7117B5007D227C /* MissingAttendanceListCell.swift in Sources */,
 				D08E8DE32935E67700DC4E61 /* BaseViewController.swift in Sources */,
 				D06DCD3A292E46B000DB6C3E /* Dashboard.swift in Sources */,
 				D06C2E8A299CDDBC001A18D7 /* SearchPopupDash.swift in Sources */,
@@ -752,13 +814,16 @@
 				D06DCD56292E4D4B00DB6C3E /* LoginShowData.swift in Sources */,
 				D07EC1BF299B4A750037BB08 /* PopupSearchController.swift in Sources */,
 				D08E8DE52935E68500DC4E61 /* MenuViewController.swift in Sources */,
+				D04663662A1340E2009D2FAD /* GradeInputController.swift in Sources */,
 				D06FE64729951EB800B3B818 /* AssignmentController.swift in Sources */,
 				D01937F22988E9670072D481 /* GradeDetailsCell.swift in Sources */,
 				D07357A8293DF004005EB7F5 /* ClassOverviewController.swift in Sources */,
 				D07B8B852969ED82007871E9 /* AllStudentsCell.swift in Sources */,
 				D08047B2297D8BD3003429E9 /* AttendanceCell.swift in Sources */,
 				D07A51C2296578C800DCA1D5 /* SchoolsDetailsInfo.swift in Sources */,
+				D046636A2A1387C3009D2FAD /* LatterGradeController.swift in Sources */,
 				D06D53E329294B00004A469B /* Connstant.swift in Sources */,
+				D09A36A02A14981000E28F86 /* PercentGradeCell.swift in Sources */,
 				D07872A829256B1300D86740 /* AppDelegate.swift in Sources */,
 				D06FE6442994CD6300B3B818 /* QuaterGradeBookInputController.swift in Sources */,
 				D06B0652299EB19100395065 /* InsideAssignmentCreateController.swift in Sources */,
@@ -771,18 +836,25 @@
 				D06DCD59292E4D4C00DB6C3E /* ForgotPasswordManager.swift in Sources */,
 				D04B9846299600A6001E0FF1 /* AssignmentCell.swift in Sources */,
 				D06D53E129294AD5004A469B /* Global.swift in Sources */,
+				D04663682A135AA7009D2FAD /* GradeInputContainer.swift in Sources */,
 				D06DCD5A292E4D4C00DB6C3E /* LoginController.swift in Sources */,
 				D01A237429693FE300475F91 /* SchoolsDetailsWashInfo.swift in Sources */,
 				D06DCD55292E4D4B00DB6C3E /* ForgotPasswordViewController.swift in Sources */,
+				D075C28E2A71178A007D227C /* MissingAttendanceListController.swift in Sources */,
 				D07983CD297A6FA000B96D13 /* StudentCell.swift in Sources */,
+				D0927A1C2A11F9C900C72C82 /* GradeContainer.swift in Sources */,
 				D06C3330297FE443003E72FA /* AttendanceMarkPopupCell.swift in Sources */,
 				D06DFCA829926E3A00A9FF27 /* QuarterGradeBookCell.swift in Sources */,
+				D046636C2A138800009D2FAD /* LatterGradeCell.swift in Sources */,
 				D06ED288296990D300590FD6 /* AllStudentsController.swift in Sources */,
+				D0C2CB4A2A6FD61000A603AA /* NotificationMissingAttendanceCell.swift in Sources */,
 				D06C332E297FDBDE003E72FA /* AttendanceMarkPopup.swift in Sources */,
 				D076AE3029368FF900E248EE /* SchoolsCell.swift in Sources */,
 				D06DCD58292E4D4B00DB6C3E /* LoginData.swift in Sources */,
 				D06DCD54292E4D4B00DB6C3E /* SubmitWebURL.swift in Sources */,
+				D07BF16C2A15EA7C007AB3C6 /* SelectLatterGradeController.swift in Sources */,
 				D0DC10F029702D1600C524EB /* ScheduleCell.swift in Sources */,
+				D09A36A22A14982400E28F86 /* PercentGradeController.swift in Sources */,
 				D07872AA29256B1300D86740 /* SceneDelegate.swift in Sources */,
 				D01937F42988E9850072D481 /* GradeDetailsController.swift in Sources */,
 			);
@@ -961,22 +1033,25 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = HXWVJ7243W;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = OpenSIS/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "PACIFIC EMIS";
+				INFOPLIST_KEY_CFBundleDisplayName = "openSIS SaaS - Teacher";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				INFOPLIST_KEY_UIRequiresFullScreen = NO;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.02;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.PACIFIC-EMIS";
+				MARKETING_VERSION = 1.0.4;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.openSIS-SaaS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -991,22 +1066,25 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = HXWVJ7243W;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = OpenSIS/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "PACIFIC EMIS";
+				INFOPLIST_KEY_CFBundleDisplayName = "openSIS SaaS - Teacher";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				INFOPLIST_KEY_UIRequiresFullScreen = NO;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.02;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.PACIFIC-EMIS";
+				MARKETING_VERSION = 1.0.4;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.openSIS-SaaS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

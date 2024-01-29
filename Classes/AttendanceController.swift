@@ -41,11 +41,14 @@ class AttendanceController: UIViewController,UITableViewDelegate,UITableViewData
     var  storeName = UserDefaults.standard.string(forKey: "Key_Name") ?? ""
     var storeCourseSectionID = UserDefaults.standard.string(forKey: "Key_CourseSectionID") ?? ""
     var storeAcademicYears = UserDefaults.standard.string(forKey: "Key_AcademicYears") ?? ""
+    let storeAttCategoryId = UserDefaults.standard.string(forKey: "Key_AttCategoryId") ?? ""
     
     let BaseURL = UserDefaults.standard.string(forKey: "Key_BaseURL") ?? ""
     let storeAttTakenk = UserDefaults.standard.string(forKey: "Key_AttTakenk") ?? ""
     
-    
+    let storeCourseId = UserDefaults.standard.string(forKey: "Key_CourseId") ?? ""
+    let StoreAttDate = UserDefaults.standard.string(forKey: "Key_AttDate") ?? ""
+    let storePeriodId = UserDefaults.standard.string(forKey: "Key_PeriodId") ?? ""
     
     let iconEmpt = UIImage(named: "student") as UIImage?
     
@@ -150,7 +153,7 @@ class AttendanceController: UIViewController,UITableViewDelegate,UITableViewData
     
     
     @IBAction func btnTapSub(_ sender: Any) {
-       
+        callAPIAttendanceSubmite()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -206,8 +209,9 @@ class AttendanceController: UIViewController,UITableViewDelegate,UITableViewData
             cell.selectionStyle = .none
         return cell
     }
-    
    
+
+    
 }
 
 
@@ -243,18 +247,88 @@ extension AttendanceController:BtnMSG {
 }
 
 extension AttendanceController{
+    
+    
+    // ====== Attendance Submite
+    
+    func callAPIAttendanceSubmite(){
+        SVProgressHUD.show()
+        let parameters = [
+            "studentAttendance": arrAttendanceList,
+            "courseId":storeCourseId,
+            "courseSectionId":storeCourseSectionID,
+            "attendanceDate" : StoreAttDate,
+            "periodId" : storePeriodId,
+            "staffId":storeUserID,
+            "updatedBy" : "3d37d665-24dc-43e4-8d68-407b6d473d19",
+            "_tenantName":storeTenantName,
+            "_userName":storeName,
+            "_token":storeToken,
+            "tenantId":storeTenantID,
+            "schoolId":storeSchoolID,
+            "academicYear":storeAcademicYears
+            
+            ] as [String : Any];
+        
+        print("Param Attendance Status==",parameters)
+        let jsonData = try! JSONSerialization.data(withJSONObject: parameters, options: JSONSerialization.WritingOptions.prettyPrinted)
+        let urlString = BaseURL + "StudentAttendance/addUpdateStudentAttendance"
+        print("URL Attendance Sub==",urlString)
+        let url = URL(string: urlString)!
+        var request = URLRequest(url: url)
+        request.httpMethod = HTTPMethod.post.rawValue
+        request.setValue("application/json; charset=UTF-8", forHTTPHeaderField: "Content-Type")
+        request.httpBody = jsonData
+        Alamofire.request(request).responseJSON {response in
+            switch response.result {
+            case .success(let data):
+                SVProgressHUD.dismiss()
+                //print("att Status===",response)
+                let json = JSON(data)
+                print("json Attendance Status==",json)
+                
+                let status = json["_failure"].stringValue
+                let message = json["_message"].stringValue
+                
+                 if status == "false"{
+                     
+                     self.displayAlertMessage(messageToDisplay: message)
+                     print("Attendance Summitted Successfully==")
+                     
+                 }else{
+                    self.displayAlertMessage(messageToDisplay: message)
+                 }
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+                
+                
+                
+                break
+            case .failure(let error):
+                SVProgressHUD.dismiss()
+                print("Request failed with error: \(error)")
+                break
+            }
+            
+            
+        }
+    }
+    
+    
     // ====== Attendance Present Default Code
     
     func callAPIGetAttendancePresentCode(){
         SVProgressHUD.show()
         let parameters = [
             "attendanceCodeList": [],
-            "attendanceCategoryId":1,
+            "attendanceCategoryId":storeAttCategoryId,
             "_tenantName":storeTenantName,
             "_userName":storeName,
             "_token":storeToken,
             "tenantId":storeTenantID,
             "schoolId":storeSchoolID,
+            "_academicYear": storeAcademicYears,
             "academicYear":storeAcademicYears
             
             ] as [String : Any];
@@ -319,8 +393,9 @@ extension AttendanceController{
         SVProgressHUD.show()
         
         let parameters = [
-            "pageNumber":1,
+            "pageNumber":0,
             "_pageSize":10,
+            "pageSize": 0,
             "sortingModel":"",
             "filterParams":[],
             "courseSectionIds":[storeCourseSectionID],
@@ -330,6 +405,7 @@ extension AttendanceController{
             "_userName":storeName,
             "_token":storeToken,
             "tenantId":storeTenantID,
+            "_academicYear": storeAcademicYears,
             "schoolId":storeSchoolID
             
             ] as [String : Any];

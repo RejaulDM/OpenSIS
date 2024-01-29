@@ -31,6 +31,9 @@ class StudentCell: UITableViewCell {
     
     @IBOutlet weak var viewBack: UIView!
     
+    
+    @IBOutlet weak var imgProfile: UIImageView!
+    
     var ClickCellDelegateEmpInFile: EmpCall?
     var indexIDEmpInFile: IndexPath?
     
@@ -40,6 +43,9 @@ class StudentCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        imgProfile.layer.cornerRadius = imgProfile.frame.height/2
+        imgProfile.clipsToBounds = true
         
         lblRound.layer.cornerRadius = lblRound.frame.width/2
         lblRound.layer.masksToBounds = true

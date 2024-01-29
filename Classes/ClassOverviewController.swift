@@ -23,7 +23,7 @@ class ClassOverviewController: UIViewController,UICollectionViewDataSource,UICol
     
     var headerMenuItem = [
         MenuItem(itemName: "Overview"),
-        MenuItem(itemName: "Student"),
+        MenuItem(itemName: "Students"),
         MenuItem(itemName: "Attendance"),
         MenuItem(itemName: "Gradebook Configuartion"),
         MenuItem(itemName: "Assignments"),

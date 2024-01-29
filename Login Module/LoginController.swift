@@ -14,21 +14,18 @@ import SwiftyJSON
 
 class LoginController: UIViewController,UITextFieldDelegate {
     
-
+    @IBOutlet weak var lblSchoolName: UILabel!
+   
+    @IBOutlet weak var icon: UIImageView!
+    
     
     @IBOutlet weak var submitButton: TransitionButton!
-    
     @IBOutlet weak var editSchoolWebURL: DTTextField!
-    
     @IBOutlet weak var textUserName: DTTextField!
     @IBOutlet weak var textPassword: DTTextField!
-    
     @IBOutlet weak var btnPassShowHide: UIButton!
-    
     @IBOutlet weak var btnLogin: TransitionButton!
-    
     @IBOutlet weak var viewEditURL: UIView!
-    
     @IBOutlet weak var viewPassword: UIView!
     @IBOutlet weak var viewEmailAddress: UIView!
     
@@ -43,8 +40,33 @@ class LoginController: UIViewController,UITextFieldDelegate {
    // var loginManager = LoginManger()
     var passrordKey: String?
     
+    let storeSchoolname = UserDefaults.standard.string(forKey: "Key_Schoolname") ?? ""
+    let storeTenantId = UserDefaults.standard.string(forKey: "Key_TenantId") ?? ""
+    let storeTenantLogo = UserDefaults.standard.string(forKey: "Key_TenantLogo") ?? ""
+    let storeTenantName = UserDefaults.standard.string(forKey: "Key_TenantName") ?? ""
+    let storeTenantFavIcon = UserDefaults.standard.string(forKey: "Key_TenantFavIcon") ?? ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        icon.layer.cornerRadius = icon.frame.height/2
+        icon.clipsToBounds = true
+        
+        lblSchoolName.text = storeSchoolname
+        let imgPath = storeTenantLogo
+        if imgPath == "" {
+            print("error with base64String")
+            
+            //icon.image = iconEmpt
+            } else {
+                let decodedData = NSData(base64Encoded: imgPath, options: [])
+                if let data = decodedData {
+                    let decodedimage = UIImage(data: data as Data)
+                    icon.image = decodedimage
+                    } else {
+                        print("error with decodedData")
+                    }
+                }
         
         if #available(iOS 13.0, *) {
             overrideUserInterfaceStyle = .light
@@ -57,17 +79,23 @@ class LoginController: UIViewController,UITextFieldDelegate {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        
+        let WebAddress = UserDefaults.standard.string(forKey: "Key_WebAddress") ?? ""
+        let WebAddressInput = UserDefaults.standard.string(forKey: "Key_InputWebAddress") ?? ""
+        
         let SubURL  = UserDefaults.standard.string(forKey: "Key_WebURL") ?? ""
         let Key_Password  = UserDefaults.standard.string(forKey: "Key_Password") ?? ""
         let storeUserid  = UserDefaults.standard.string(forKey: "Key_UserName") ?? ""
         
         textUserName.text = storeUserid
         textPassword.text = Key_Password
-        editSchoolWebURL.text = SubURL
+        editSchoolWebURL.text = WebAddressInput
         
         if storeUserid == ""{
             
-            editSchoolWebURL.text = "https://fedsis.doe.fm/"
+            //editSchoolWebURL.text = "https://fedsis.doe.fm/"
+            
+            editSchoolWebURL.attributedPlaceholder = NSAttributedString(string: "Please Enter Web Address", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
             
             textUserName.attributedPlaceholder = NSAttributedString(string: "Email Address", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
             
@@ -98,9 +126,17 @@ class LoginController: UIViewController,UITextFieldDelegate {
     @IBAction func forGotPassword(_ sender: Any) {
     
         
-        let storyboard = UIStoryboard(name: K.LoginStoryBoard, bundle: nil)
+      /*  let storyboard = UIStoryboard(name: K.LoginStoryBoard, bundle: nil)
         let contollerName = storyboard.instantiateViewController(withIdentifier: "")
+        self.present(contollerName, animated: true, completion: nil) */
+    }
+   
+    @IBAction func btnEditURL(_ sender: Any) {
+        
+        let storyboard = UIStoryboard(name: K.LoginStoryBoard, bundle: nil)
+        let contollerName = storyboard.instantiateViewController(withIdentifier: "SubmitWebURL")
         self.present(contollerName, animated: true, completion: nil)
+        
     }
     
     
@@ -190,8 +226,8 @@ extension LoginController {
         else {
             
             //callAPILogin()
-            CallApiPasswordKey()
-            
+            //CallApiPasswordKey()
+            callAPILogin()
             //self.submitButton.startAnimation()
             //loginManager.getLogin(userIDTextFileld.text!, paswwordTextField.text!)
         }
@@ -202,10 +238,16 @@ extension LoginController {
         
         if (editSchoolWebURL.text?.isEmpty)!{
             self.displayAlertMessage(messageToDisplay: "Please Enter Web Address")
-            
         }else{
+            var passtext = editSchoolWebURL.text!
+            let lastChar = passtext.last!
+            print("lastChar===",lastChar)
+            if lastChar == "/"{
+             passtext.remove(at: passtext.index(before: passtext.endIndex))
+                print("passtext===",passtext)
+            }
             
-            let passtext = editSchoolWebURL.text!
+            
             let start = passtext.components(separatedBy: ":")
             let getUrl : String = start[1]
             print("getUrl====",getUrl)
@@ -243,6 +285,8 @@ extension LoginController {
             let jsonString1 = String(data: jsonData, encoding: String.Encoding.ascii)!
             let urlString = baseUrl + "User/getEncryptPassword?password=" + textPassword.text!
             print("URL ValidateLogin=====",urlString)
+        
+        
             let url = URL(string: urlString)!
             var request = URLRequest(url: url)
             print("request ValidateLogin===",request)
@@ -276,21 +320,47 @@ extension LoginController {
    
      func callAPILogin(){
          
+         let testString = textPassword.text!
+         let passwordBase64 = testString.toBase64()
+         print("passwordBase64===",passwordBase64)
+         var passtext = editSchoolWebURL.text!
+         let lastChar = passtext.last!
+         print("lastChar===",lastChar)
+         if lastChar == "/"{
+          passtext.remove(at: passtext.index(before: passtext.endIndex))
+             print("passtext===",passtext)
+         }
+         let start = passtext.components(separatedBy: ":")
+         let getUrl : String = start[1]
+         print("getUrl====",getUrl)
+         UserDefaults.standard.set(passtext, forKey: "Key_SubURL")
+         
+         let tname = getUrl.components(separatedBy: "//")
+         let tantName : String = tname[1]
+         let gtname = tantName.components(separatedBy: ".")
+         let gtantName : String = gtname[0]
+         print("get tantName==",gtantName)
+         let WebAddress = UserDefaults.standard.string(forKey: "Key_WebAddress") ?? ""
+         let baseUrl = WebAddress + gtantName + "/"
+         print("baseUrl====",baseUrl)
+         UserDefaults.standard.set(baseUrl, forKey: "Key_BaseURL")
+         UserDefaults.standard.set(gtantName, forKey: "Key_TentName")
          let BaseURL = UserDefaults.standard.string(forKey: "Key_BaseURL") ?? ""
          let TentName = UserDefaults.standard.string(forKey: "Key_TentName") ?? ""
+         print("BaseUrl TentName===",BaseURL,TentName)
          //"nickson@yopmail.com"
-         btnLogin.startAnimation()
+         //btnLogin.startAnimation()
          SVProgressHUD.show()
-         
+         //111.93.180.158
          let parameters = [
-            "tenantid":"1e93c7bf-0fae-42bb-9e09-a1cedc8c0355",
+            "tenantid":storeTenantId,
              "userid":0,
              "useraccesslog":[
-             "ipaddress":"122.163.76.226",
+             "ipaddress":"111.93.180.158",
              "emailaddress":textUserName.text!
              ],
              "_tenantname":TentName,
-             "password":passrordKey!,
+             "password": passwordBase64,
              "email":textUserName.text!,
              "isMobileLogin":true,
              "schoolId":"",
@@ -317,7 +387,7 @@ extension LoginController {
              switch response.result {
              case .success(let data):
                  SVProgressHUD.dismiss()
-                 self.btnLogin.startAnimation()
+                 //self.btnLogin.startAnimation()
                  //print("Login Response====",response)
                  let json = JSON(data)
                  print("json ValidateLogin====",json)
@@ -329,7 +399,10 @@ extension LoginController {
                  let email = json["email"].stringValue
                  let tenantId = json["tenantId"].stringValue
                  let schoolId = json["schoolId"].stringValue
+                 print("schoolId===",schoolId)
                  let name = json["name"].stringValue
+                 let firstGivenName = json["firstGivenName"].stringValue
+                 let lastFamilyName = json["lastFamilyName"].stringValue
                  let membershipName = json["membershipName"].stringValue
                  let membershipType = json["membershipType"].stringValue
                  let membershipId = json["membershipId"].stringValue
@@ -337,11 +410,12 @@ extension LoginController {
                  let tenantName = json["_tenantName"].stringValue
                  let userPhoto = json["userPhoto"].stringValue
                  let message = json["_message"].stringValue
-                 
+                 let fullname = firstGivenName + " " + lastFamilyName
                  if LoginStatus == "false"{
                      UserDefaults.standard.set(userId, forKey: "KEY_USERID")
                      UserDefaults.standard.set(self.textPassword.text!, forKey: "Key_Password")
                      UserDefaults.standard.set(self.textUserName.text!, forKey: "Key_UserName")
+                     UserDefaults.standard.set(fullname, forKey: "Key_FullName")
                      UserDefaults.standard.set(email, forKey: "Key_Email")
                      UserDefaults.standard.set(tenantId, forKey: "Key_TenantId")
                      UserDefaults.standard.set(schoolId, forKey: "Key_SchoolID")

@@ -57,11 +57,27 @@ class StudentController: UIViewController,UITableViewDelegate,UITableViewDataSou
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! StudentCell
         
         let item = arrStudentList[indexPath.row]
-        
-        cell.lblName.text = item["firstGivenName"].stringValue
+        let firstname = item["firstGivenName"].stringValue
+        let lstname = item["lastFamilyName"].stringValue
+        cell.lblName.text = lstname + ", " + firstname
         cell.lblID.text = "ID :" + item["studentInternalId"].stringValue
         cell.lblAltID.text = "Alt ID :" +  item["alternateId"].stringValue
         cell.lblGrade.text = item["gradeLevel"].stringValue
+        
+        let imgPath = item["studentPhoto"].stringValue
+        if imgPath == "" {
+            print("error with base64String")
+            
+            //icon.image = iconEmpt
+            } else {
+                let decodedData = NSData(base64Encoded: imgPath, options: [])
+                if let data = decodedData {
+                    let decodedimage = UIImage(data: data as Data)
+                    cell.imgProfile.image = decodedimage
+                    } else {
+                        print("error with decodedData")
+                    }
+                }
         
         
         cell.ClickCellDelegateEmpInFile = self

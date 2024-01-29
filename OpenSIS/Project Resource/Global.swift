@@ -39,9 +39,9 @@ extension UIViewController {
                print("Ok button tapped");
                
                
-               let storyboard = UIStoryboard(name: "Login", bundle: nil)
+              /* let storyboard = UIStoryboard(name: "Login", bundle: nil)
                let contollerName = storyboard.instantiateViewController(withIdentifier: "Login1")
-               self.present(contollerName, animated: true, completion: nil) 
+               self.present(contollerName, animated: true, completion: nil) */
            }
            
            alertController.addAction(OKAction)

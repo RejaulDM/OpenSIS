@@ -16,7 +16,7 @@ class AssignmentController: UIViewController,UITableViewDelegate,UITableViewData
     @IBOutlet weak var tableView: UITableView!
     
     
-    var  storeSchoolID = UserDefaults.standard.string(forKey: "Key_SelectSchoolID") ?? ""
+    var  storeSchoolID = UserDefaults.standard.string(forKey: "Key_SchoolID") ?? ""
     var  storeEmail = UserDefaults.standard.string(forKey: "Key_Email") ?? ""
     var  storeTenantID = UserDefaults.standard.string(forKey: "Key_TenantId") ?? ""
     var  storeTenantName = UserDefaults.standard.string(forKey: "Key_TenantName") ?? ""
@@ -30,10 +30,10 @@ class AssignmentController: UIViewController,UITableViewDelegate,UITableViewData
     let BaseURL = UserDefaults.standard.string(forKey: "Key_BaseURL") ?? ""
     
      var arrAssignment = [JSON]()
-    var customView = UIView()
+     var customView = UIView()
     
-    var assignTypeID = ""
-    var courseSecID = ""
+      var assignTypeID = ""
+      var courseSecID = ""
     
    
     
@@ -250,6 +250,7 @@ extension AssignmentController{
                 "_token":storeToken,
                 "tenantId":storeTenantID,
                 "schoolId":storeSchoolID,
+                "_academicYear": storeAcademicYears,
                 "academicYear":storeAcademicYears,
                 "markingPeriodStartDate":strorePeriodStartDate,
                 "markingPeriodEndDate":strorePeriodEndDate
@@ -257,7 +258,7 @@ extension AssignmentController{
         
         
         
-        print("Param Assignment==",parameters)
+        print("Param All Assignment Type==",parameters)
         let jsonData = try! JSONSerialization.data(withJSONObject: parameters, options: JSONSerialization.WritingOptions.prettyPrinted)
         let urlString = BaseURL + "StaffPortalAssignment/getAllAssignmentType"
         print("URL Assignment==",urlString)
@@ -409,17 +410,19 @@ class SelectedAssignment {
     var points:String?
     var assignmentDate:String?
     var dueDate:String?
+    var staffId:String?
     
-    init(assignmentTitle: String?,assignmentDescription:String?, assignmentTypeId: String?, assignmentId: String?, courseSectionId: String?,points:String?,assignmentDate:String,dueDate:String?) {
+    init(assignmentTitle: String?,assignmentDescription:String?, assignmentTypeId: String?, assignmentId: String?, courseSectionId: String?,points:String?,assignmentDate:String,dueDate:String?,staffId:String?) {
         
         self.assignmentTitle = assignmentTitle
         self.assignmentDescription = assignmentDescription
         self.assignmentTypeId = assignmentTypeId
-        self.assignmentId = assignmentTypeId
+        self.assignmentId = assignmentId
         self.courseSectionId = courseSectionId
         self.points = points
         self.assignmentDate = assignmentDate
         self.dueDate = dueDate
+        self.staffId = staffId
         
     }
 }

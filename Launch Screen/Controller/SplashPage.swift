@@ -23,6 +23,11 @@ class SplashPage: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //https://fedsis.doe.fm/
+        
+        
+        
         allGetSplash()
         
     }

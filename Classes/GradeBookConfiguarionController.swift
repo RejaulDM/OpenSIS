@@ -35,7 +35,7 @@ class GradeBookConfiguarionController: UIViewController,UITableViewDelegate,UITa
     @IBOutlet weak var tableView: UITableView!
     
     
-    var  storeSchoolID = UserDefaults.standard.string(forKey: "Key_SelectSchoolID") ?? ""
+   // var  storeSchoolID = UserDefaults.standard.string(forKey: "Key_SelectSchoolID") ?? ""
     var  storeEmail = UserDefaults.standard.string(forKey: "Key_Email") ?? ""
     var  storeTenantID = UserDefaults.standard.string(forKey: "Key_TenantId") ?? ""
     var  storeTenantName = UserDefaults.standard.string(forKey: "Key_TenantName") ?? ""
@@ -46,6 +46,7 @@ class GradeBookConfiguarionController: UIViewController,UITableViewDelegate,UITa
     var stroreCourseSectionID = UserDefaults.standard.string(forKey: "Key_CourseSectionID") ?? ""
     var  stroreCourseID = UserDefaults.standard.string(forKey: "Key_CourseID") ?? ""
     let BaseURL = UserDefaults.standard.string(forKey: "Key_BaseURL") ?? ""
+    var  storeSchoolID = UserDefaults.standard.string(forKey: "Key_SchoolID") ?? ""
     
     let checkImg = UIImage(named: "checkbox_checked") as UIImage?
     let uncheckImg = UIImage(named: "checkbox") as UIImage?
@@ -180,7 +181,10 @@ class GradeBookConfiguarionController: UIViewController,UITableViewDelegate,UITa
     }
     
 
-
+    @IBAction func btnTappedSubmite(_ sender: Any) {
+        
+    }
+    
 }
 
 extension GradeBookConfiguarionController: BtnUserText1 {
@@ -308,6 +312,7 @@ extension GradeBookConfiguarionController{
                 "gradebookConfigurationQuarter":[],
                 "gradebookConfigurationSemester":[],
                 "gradebookConfigurationYear":[],
+                "lmsGradeSync": 1,
                 "general":"",
                 "courseId":stroreCourseID,
                 "courseSectionId":stroreCourseSectionID,
@@ -319,7 +324,8 @@ extension GradeBookConfiguarionController{
             "_userName":storeName,
             "_token":storeToken,
             "tenantId":storeTenantID,
-            "schoolId":storeAcademicYears
+            "_academicYear": storeAcademicYears,
+            "schoolId":storeSchoolID
     ]as [String : Any];
         
        
@@ -350,27 +356,58 @@ extension GradeBookConfiguarionController{
                      print("Grade Feild Value ==",gradeFieldValue)
                      
                      let general = gradeFieldValue["general"]?.stringValue
+                     
+                     let dayList = general!.components(separatedBy: "|")
+                     print("General Selected List===",dayList)
+                     
+                     for val in dayList
+                     {
+                         switch(val){
+                         case "weightGrades":
+                             self.btnActionWeight.setBackgroundImage(self.checkImg, for: .normal)
+                             break;
+                         case "assignedDateDefaultsToToday":
+                             self.btnActionAssigned.setBackgroundImage(self.checkImg, for: .normal)
+                             break;
+                         case "dueDateDefaultsToToday":
+                             self.btnActionDueDate.setBackgroundImage(self.checkImg, for: .normal)
+                             break;
+                         default:
+                             break;
+                             
+                         }
+                     }
+                     
+                     let  scoreRounding = gradeFieldValue["scoreRounding"]?.stringValue
+                     
+                     if scoreRounding == "up"{
+                        self.btnActionUp.setBackgroundImage(self.checkImgR, for: .normal)
+                     }else if scoreRounding == "down"{
+                         self.btnActionDown.setBackgroundImage(self.checkImgR, for: .normal)
+                     }else if scoreRounding == "normal"{
+                         self.btnActionNormal.setBackgroundImage(self.checkImgR, for: .normal)
+                     }else if scoreRounding == "none"{
+                         self.btnActionNone.setBackgroundImage(self.checkImgR, for: .normal)
+                     }
+                     
                      let assignmentSorting = gradeFieldValue["assignmentSorting"]?.stringValue
-                   let  scoreRounding = gradeFieldValue["scoreRounding"]?.stringValue
+                     
+                     if assignmentSorting == "newestFirst"{
+                         self.btnActionNewest.setBackgroundImage(self.checkImgR, for: .normal)
+                     }else if assignmentSorting == "dueDate"{
+                         self.btnActionAssignmentDueDate.setBackgroundImage(self.checkImgR, for: .normal)
+                     }else if assignmentSorting == "assignedDate"{
+                         self.btnActionAssignDate.setBackgroundImage(self.checkImgR, for: .normal)
+                     }else if assignmentSorting == "ungraded"{
+                         self.btnActionUngrade.setBackgroundImage(self.checkImgR, for: .normal)
+                     }
+                   
                      
                      let  maxAnomalousGrade = gradeFieldValue["maxAnomalousGrade"]?.stringValue
                      self.textPresent.text = maxAnomalousGrade
                      
                      let  upgradedAssignmentGradeDays = gradeFieldValue["upgradedAssignmentGradeDays"]?.stringValue
                      self.textDays.text = upgradedAssignmentGradeDays
-                     
-                     if general == "weightGrades"{
-                         self.btnActionWeight.setBackgroundImage(self.checkImg, for: .normal)
-                     }
-                     
-                     if assignmentSorting == "newestFirst"{
-                         self.btnActionNewest.setBackgroundImage(self.checkImgR, for: .normal)
-                     }
-                     
-                     if scoreRounding == "up"{
-                         self.btnActionUp.setBackgroundImage(self.checkImgR, for: .normal)
-                     }
-                     
                      
                      
                      let getSamesterVal = gradeFieldValue["gradebookConfigurationQuarter"]?.arrayValue

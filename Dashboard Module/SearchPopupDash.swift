@@ -38,6 +38,8 @@ class SearchPopupDash: UIViewController {
     
     var SelectSchoolID = ""
     
+    var currentDate = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -78,7 +80,12 @@ class SearchPopupDash: UIViewController {
         view3.layer.borderWidth = 1
         view3.layer.borderColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
         
-        
+        //show date in label fields
+        let date = Date()
+        let formatter1 = DateFormatter()
+        formatter1.dateFormat = "yyyy-MM-dd"
+        let result = formatter1.string(from: date)
+        currentDate = result
         
         
         callAPISchoolDropdownList()
@@ -147,6 +154,15 @@ class SearchPopupDash: UIViewController {
                         var schoolId = item["schoolId"].stringValue
                         print("schoolId====",schoolId)
                         
+                        if self.storeSchoolID == schoolId{
+                            var schoolName = item["schoolName"].stringValue
+                            self.dropdownSchool.text = schoolName
+                            print("schoolName===",schoolName)
+                            var schoolId = item["schoolId"].stringValue
+                            print("schoolId====",schoolId)
+                            UserDefaults.standard.set(schoolId, forKey: "Key_SchoolID")
+                        }
+                        
                         option.selectSchoolName.append(schoolName)
                         option.selectSchoolID.append(schoolId)
                         
@@ -157,8 +173,9 @@ class SearchPopupDash: UIViewController {
                         //dropdownMethods.checkMarkEnabled = false
                         self.dropdownSchool.didSelect{(selectedText , index , id) in
                             self.SelectSchoolID = option.selectSchoolID[index]
-                        print(self.SelectSchoolID,"SelectSchoolID==")
-                        
+                            let schoolid = option.selectSchoolID[index]
+                        print("SelectSchoolID===",schoolid)
+                            UserDefaults.standard.set(schoolid, forKey: "Key_SchoolID")
                              
                         }
                     }
@@ -219,8 +236,17 @@ class SearchPopupDash: UIViewController {
                         print("startDate====",startDate)
                         var endDate = item["endDate"].stringValue
                         print("endDate====",endDate)
+                        var accayear = item["academyYear"].stringValue
+                        print("accayear===",accayear)
+                        if self.storeAcademicYears == accayear{
+                            
+                            self.dropdownSchoolYear.text = year
+                            UserDefaults.standard.set(accayear, forKey: "Key_AcademicYears")
+                        }
+                        
                         
                         option.selectYearName.append(year)
+                        option.selectAccaYear.append(accayear)
                         option.selectYearSDate.append(startDate)
                         option.selectYearEDate.append(endDate)
                         
@@ -230,6 +256,9 @@ class SearchPopupDash: UIViewController {
                         //var id = option.ids
                         //dropdownMethods.checkMarkEnabled = false
                         self.dropdownSchoolYear.didSelect{(selectedText , index , id) in
+                            let accYear = option.selectAccaYear[index]
+                            print("accYear===",accYear)
+                            UserDefaults.standard.set(accYear, forKey: "Key_AcademicYears")
                             let sdate = option.selectYearSDate[index]
                             let edate = option.selectYearEDate[index]
                         print(sdate,edate,"sdate edate==")
@@ -286,10 +315,32 @@ class SearchPopupDash: UIViewController {
                
                     for item in getSchoolForView {
                         
-                        var periodTitle = item["periodTitle"].stringValue
+                        let periodTitle = item["periodTitle"].stringValue
                         print("periodTitle===",periodTitle)
-                        var markingPeriodId = item["markingPeriodId"].stringValue
+                        let markingPeriodId = item["markingPeriodId"].stringValue
                         print("markingPeriodId====",markingPeriodId)
+                        
+                        
+                        let sdate = item["startDate"].stringValue
+                        let edate = item["endDate"].stringValue
+                        let start = sdate.components(separatedBy: "T")
+                        let getStart : String = start[0]
+                        let end = edate.components(separatedBy: "T")
+                        let getEnd : String = end[0]
+                        
+                        
+                        if self.currentDate >= getStart && self.currentDate <= getEnd{
+                            let FSdate = item["startDate"].stringValue
+                            let FEdate = item["endDate"].stringValue
+                            UserDefaults.standard.set(FSdate, forKey: "Key_PeriodStartDate")
+                            UserDefaults.standard.set(FEdate, forKey: "Key_PeriodEndDate")
+                            print("FSdate==",FSdate,"FEdate==",FEdate)
+                            
+                            let periodTitle = item["periodTitle"].stringValue
+                            self.dropdownMarkingPeriod.text = periodTitle
+                        }
+                        
+                        
                         
                         option.selectPeriodTitle.append(periodTitle)
                         option.selectMarkingPeriodId.append(markingPeriodId)

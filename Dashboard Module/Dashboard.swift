@@ -18,6 +18,9 @@ class Dashboard: BaseViewController,UICollectionViewDelegate,UICollectionViewDat
     
     @IBOutlet weak var viewAttendanceMiss: UIView!
     
+    @IBOutlet weak var btnTitleAttMissCount: UIButton!
+
+    
     @IBOutlet weak var viewAttendanceMissCons: NSLayoutConstraint!
     
     
@@ -30,6 +33,9 @@ class Dashboard: BaseViewController,UICollectionViewDelegate,UICollectionViewDat
     @IBOutlet weak var subViewNotiShowAll: UIView!
     
     @IBOutlet weak var viewNotice: UIView!
+    
+    @IBOutlet weak var viewNoticeCons: NSLayoutConstraint!
+    
     @IBOutlet weak var innerViewNotice: UIView!
     @IBOutlet weak var lblNoticeHeader: UILabel!
     @IBOutlet weak var textNoticeDec: UITextView!
@@ -69,7 +75,7 @@ class Dashboard: BaseViewController,UICollectionViewDelegate,UICollectionViewDat
     var stroreMembershipID = UserDefaults.standard.string(forKey: "Key_MembershipID") ?? ""
     var storeLogoData  = UserDefaults.standard.string(forKey: "Key_Base64") ?? ""
     var BaseURL = UserDefaults.standard.string(forKey: "Key_BaseURL") ?? ""
-    
+    var  storeAcademicYears = UserDefaults.standard.string(forKey: "Key_AcademicYears") ?? ""
     
     var arrViewCourseList = [JSON]()
     
@@ -79,12 +85,13 @@ class Dashboard: BaseViewController,UICollectionViewDelegate,UICollectionViewDat
     
     var getStartDate = ""
     var getEndDate = ""
-    var AcademicYear = ""
+    //var AcademicYear = ""
     var currentDay = ""
+    var currentYear = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print("Key_SchoolID====",storeSchoolID)
         self.lblNoClassMsg.isHidden = true
         viewEvent1.isHidden = true
         viewEvent2.isHidden = true
@@ -153,12 +160,14 @@ class Dashboard: BaseViewController,UICollectionViewDelegate,UICollectionViewDat
         dateFormatter.dateFormat = "EEEE"
         let dayInWeek = dateFormatter.string(from: date)
         currentDay = dayInWeek
+        //dayInWeek "Monday"
         print("currentDay===",currentDay)
-       /* let date = Date()
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "EEEE"
-        let dayInWeek = dateFormatter.string(from: date)*/
+       
         
+        let dateFormatterY = DateFormatter()
+        dateFormatterY.dateFormat = "yyyy"
+        let year = dateFormatterY.string(from: date)
+        currentYear = year
         callAPIAcademicYear()
         CallApiGetLogo()
         // Do any additional setup after loading the view.
@@ -250,7 +259,15 @@ class Dashboard: BaseViewController,UICollectionViewDelegate,UICollectionViewDat
     }
     
     
-    // Wie viele Objekete soll es geben?
+    @IBAction func btnTappedNotification(_ sender: Any) {
+        //NotificationMissingAttendanceController
+        let storyBoard = UIStoryboard(name: "Dashboard", bundle: nil)
+        let controller = storyBoard.instantiateViewController(withIdentifier: "NotificationMissingAttendanceController")
+        self.present(controller, animated: true, completion: nil)
+    }
+    
+    
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return selectedCourseList.count
         
@@ -262,35 +279,7 @@ class Dashboard: BaseViewController,UICollectionViewDelegate,UICollectionViewDat
             
         let item = selectedCourseList[indexPath.row]
         let showday = item.MeetingDays
-        let dayList = showday!.components(separatedBy: "|")
-        print("Show DayList===",dayList)
         
-        for val in dayList
-        {
-            switch(val){
-            case "Monday":
-                cell.lblMon.textColor = .blue
-                break;
-            case "Tuesday":
-                cell.lblTue.textColor = .blue
-                break;
-            case "Wednesday":
-                cell.lblWed.textColor = .blue
-                break;
-            case "Thursday":
-                cell.lblThus.textColor = .blue
-                break;
-            case "Friday":
-                cell.lblFri.textColor = .blue
-                break;
-            case "Saturday":
-                cell.lblSat.textColor = .blue
-                break;
-            default:
-                break;
-                
-            }
-        }
         
             cell.lblSubjectCode.text = item.CourseSectionName
             cell.lblCourseSection.text = item.CourseTitle
@@ -328,10 +317,13 @@ class Dashboard: BaseViewController,UICollectionViewDelegate,UICollectionViewDat
         let courseID = item.CourseID
         let sectionname = item.CourseSectionName
         let attTakenk = item.attendanceTaken
+        let attCatId = item.attCatID
+        let markingPeriodID = item.markingPeriod
         
         
-        print("sectionID====",sectionID, "courseID===",courseID, "attTakenk==",attTakenk)
+        print("sectionID====",sectionID, "courseID===",courseID, "attTakenk==",attTakenk, "markingPeriodID==",markingPeriodID)
         UserDefaults.standard.set(sectionID, forKey: "Key_CourseSectionID")
+        UserDefaults.standard.set(markingPeriodID, forKey: "Key_MarkingPeriod")
         
         UserDefaults.standard.set(courseID, forKey: "Key_CourseID")
         
@@ -339,6 +331,9 @@ class Dashboard: BaseViewController,UICollectionViewDelegate,UICollectionViewDat
         UserDefaults.standard.set("0", forKey: "Key_IndexId")
         
         UserDefaults.standard.set(attTakenk, forKey: "Key_AttTakenk")
+        
+     
+        UserDefaults.standard.set(attCatId, forKey: "Key_AttCategoryId")
         
         let storyBoard = UIStoryboard(name: "Classes", bundle: nil)
         let controller = storyBoard.instantiateViewController(withIdentifier: "ClassOverviewNav")
@@ -484,13 +479,22 @@ extension Dashboard{
                  if status == "false"{
                      let acayear = json["academicYears"].arrayValue
                      
-                     print("acayear==",acayear)
-                     let getDictYaer = acayear[0]
-                     UserDefaults.standard.set(getDictYaer["academyYear"].stringValue, forKey: "Key_AcademicYears")
-                     let getYear = getDictYaer["academyYear"].stringValue
-                     let year = getYear.components(separatedBy: ".")
-                     let getStart : String = year[0]
-                     self.AcademicYear = getStart
+                     for itm in acayear{
+                         let year = itm["academyYear"].stringValue
+                         if self.currentYear == year {
+                             print("acayear==",acayear)
+                             //let getDictYaer = acayear[1]
+                             let getDictYaer = itm["academyYear"].stringValue
+                             UserDefaults.standard.set(getDictYaer, forKey: "Key_AcademicYears")
+                             //let getYear = getDictYaer["academyYear"].stringValue
+                             //let year = getYear.components(separatedBy: ".")
+                             //let getStart : String = year[0]
+                             //self.AcademicYear = getDictYaer
+                             print("self.AcademicYear===",getDictYaer)
+                         }
+                     }
+                     
+                     
                      
                      self.callAPIAcademicPeriodList()
                      self.callAPIUpcommingEvent()
@@ -516,7 +520,7 @@ extension Dashboard{
     func callAPIAcademicPeriodList(){
         SVProgressHUD.show()
         let parameters = [
-            "academicYear":AcademicYear,
+            "academicYear":storeAcademicYears,
             "schoolId": storeSchoolID,
             "tenantId":storeTenantID,
             "_tenantName":storeTenantName,
@@ -562,6 +566,7 @@ extension Dashboard{
                          if self.currentDate >= getStart && self.currentDate <= getEnd{
                              let FSdate = val["startDate"].stringValue
                              let FEdate = val["endDate"].stringValue
+                             let markingPeriodId = val["markingPeriodId"].stringValue
                              
                              self.getStartDate = FSdate
                              self.getEndDate = FEdate
@@ -600,9 +605,10 @@ extension Dashboard{
             "allCourse":true,
             "markingPeriodStartDate":getStartDate,
             "markingPeriodEndDate":getEndDate,
-            "membershipId":"4",
+            "membershipId":stroreMembershipID,
             "schoolId": storeSchoolID,
             "staffId":storeUserID,
+            "_academicYear": storeAcademicYears,
             "tenantId":storeTenantID,
             "_tenantName":storeTenantName,
             "_token":storeToken,
@@ -640,14 +646,33 @@ extension Dashboard{
                     let NoticeList = json["noticeList"].arrayValue
                     print("Arr noticeList ==",NoticeList)
                     
+                    let missingAttCount = json["missingAttendanceCount"].stringValue
+                    print("missing Attendance Count ==",missingAttCount)
+                    if missingAttCount == "0"{
+                        
+                    }else{
+                        
+                        self.btnTitleAttMissCount.setTitle("You have  \(missingAttCount) missing attendances", for: .normal)
+                        self.viewAttendanceMiss.isHidden = false
+                        self.viewAttendanceMissCons.constant = 50
+                    }
+                    
                     if NoticeList.count == 0{
                         self.viewNotice.isHidden = true
+                        self.viewNoticeCons.constant = 0
                     }else{
                       let getnotice = NoticeList[0]
                         let getNoticeHeadr = getnotice["title"].stringValue
                         let getNoticeDec = getnotice["body"].stringValue
                         self.lblNoticeHeader.text = getNoticeHeadr
-                        self.textNoticeDec.text = getNoticeHeadr
+                        
+                        let html = getNoticeDec
+                        if let attributedText = html.attributedHtmlString {
+                            print(attributedText.string) // "hello \n\nworld\n"
+                            self.textNoticeDec.text = attributedText.string
+                        }
+                        
+                         
                         
                     }
                     
@@ -664,6 +689,8 @@ extension Dashboard{
                             let courseSectionName = val["courseSectionName"].stringValue
                            let courseSectionId = val["courseSectionId"].stringValue
                            let courseId = val["courseId"].stringValue
+                           let qtrMarkingPeriodId = val["qtrMarkingPeriodId"].stringValue
+                           let attcatId = val["attendanceCategoryId"].stringValue
                             let courseTitle = val["courseTitle"].stringValue
                             let meetingDays = val["meetingDays"].stringValue
                             let courseGradeLevel = val["courseGradeLevel"].stringValue
@@ -685,7 +712,7 @@ extension Dashboard{
                                let rooms = courseFSchedule["rooms"].dictionaryValue
                                let titleroom = rooms["title"]?.stringValue
                                
-                               self.selectedCourseList.append(SelectedCourseList(CourseSectionName: String() + courseSectionName, CourseTitle: String() + courseTitle, MeetingDays: String() + meetingDays, CourseGradeLevel: String() + courseGradeLevel, PeriodTitle: String() + (periodTitle ?? " "), PeriodStartTime: String() + (periodStartTime ?? " "), RoomTitle: String() + (titleroom ?? " "), CourseSectionID: String() + courseSectionId, CourseID: String() + courseId,ScheduleType: String() + scheduleType,attendanceTaken: String() + attendanceTaken))
+                               self.selectedCourseList.append(SelectedCourseList(CourseSectionName: String() + courseSectionName, CourseTitle: String() + courseTitle, MeetingDays: String() + meetingDays, CourseGradeLevel: String() + courseGradeLevel, PeriodTitle: String() + (periodTitle ?? " "), PeriodStartTime: String() + (periodStartTime ?? " "), RoomTitle: String() + (titleroom ?? " "), CourseSectionID: String() + courseSectionId, CourseID: String() + courseId,ScheduleType: String() + scheduleType,attendanceTaken: String() + attendanceTaken,attCatID: String() + attcatId,markingPeriod: qtrMarkingPeriodId))
                                
                            }else{
                                
@@ -697,7 +724,7 @@ extension Dashboard{
                                let rooms = courseFSchedule["rooms"]?.dictionaryValue
                                let titleroom = rooms?["title"]?.stringValue
                                
-                               self.selectedCourseList.append(SelectedCourseList(CourseSectionName: String() + courseSectionName, CourseTitle: String() + courseTitle, MeetingDays: String() + meetingDays, CourseGradeLevel: String() + courseGradeLevel, PeriodTitle: String() + (periodTitle ?? " "), PeriodStartTime: String() + (periodStartTime ?? " "), RoomTitle: String() + (titleroom ?? " "), CourseSectionID: String() + courseSectionId, CourseID: String() + courseId,ScheduleType: String() + scheduleType,attendanceTaken: String() + attendanceTaken))
+                               self.selectedCourseList.append(SelectedCourseList(CourseSectionName: String() + courseSectionName, CourseTitle: String() + courseTitle, MeetingDays: String() + meetingDays, CourseGradeLevel: String() + courseGradeLevel, PeriodTitle: String() + (periodTitle ?? " "), PeriodStartTime: String() + (periodStartTime ?? " "), RoomTitle: String() + (titleroom ?? " "), CourseSectionID: String() + courseSectionId, CourseID: String() + courseId,ScheduleType: String() + scheduleType,attendanceTaken: String() + attendanceTaken,attCatID: String() + attcatId,markingPeriod: qtrMarkingPeriodId))
                                
                            }
                         }else{
@@ -785,6 +812,8 @@ extension Dashboard{
                             let courseSectionName = val["courseSectionName"].stringValue
                            let courseSectionId = val["courseSectionId"].stringValue
                            let courseId = val["courseId"].stringValue
+                           let qtrMarkingPeriodId = val["qtrMarkingPeriodId"].stringValue
+                           let attcatId = val["attendanceCategoryId"].stringValue
                             let courseTitle = val["courseTitle"].stringValue
                             let meetingDays = val["meetingDays"].stringValue
                             let courseGradeLevel = val["courseGradeLevel"].stringValue
@@ -800,7 +829,7 @@ extension Dashboard{
                                let titleroom = rooms?["title"]?.stringValue
                            let scheduleType = val["scheduleType"].stringValue
                                
-                           self.selectedCourseList.append(SelectedCourseList(CourseSectionName: String() + courseSectionName, CourseTitle: String() + courseTitle, MeetingDays: String() + meetingDays, CourseGradeLevel: String() + courseGradeLevel, PeriodTitle: String() + (periodTitle ?? " "), PeriodStartTime: String() + (periodStartTime ?? " "), RoomTitle: String() + (titleroom ?? " "), CourseSectionID: String() + courseSectionId, CourseID: String() + courseId,ScheduleType: String() + (scheduleType),attendanceTaken: String() + attendanceTaken))
+                           self.selectedCourseList.append(SelectedCourseList(CourseSectionName: String() + courseSectionName, CourseTitle: String() + courseTitle, MeetingDays: String() + meetingDays, CourseGradeLevel: String() + courseGradeLevel, PeriodTitle: String() + (periodTitle ?? " "), PeriodStartTime: String() + (periodStartTime ?? " "), RoomTitle: String() + (titleroom ?? " "), CourseSectionID: String() + courseSectionId, CourseID: String() + courseId,ScheduleType: String() + (scheduleType),attendanceTaken: String() + attendanceTaken,attCatID: String() + attcatId,markingPeriod: qtrMarkingPeriodId))
                                
                            
                        }else{
@@ -840,7 +869,7 @@ extension Dashboard{
             "_token":storeToken,
             "tenantId":storeTenantID,
             "schoolId":storeSchoolID,
-            "academicYear": AcademicYear
+            "academicYear": storeAcademicYears
             ] as [String : Any];
         print("Param Event==",parameters)
         let jsonData = try! JSONSerialization.data(withJSONObject: parameters, options: JSONSerialization.WritingOptions.prettyPrinted)
@@ -901,9 +930,9 @@ extension Dashboard{
                             self.viewUpcoming.isHidden = false
                         } else if allEventList.count == 2{
                             
-                            let getEvent1 = allEventList[1]
+                            let getEvent1 = allEventList[0]
                             let event1 = getEvent1["title"].stringValue
-                            self.lblEvent2.text = event1
+                            self.lblEvent1.text = event1
                             let eventSDate1 = getEvent1["startDate"].stringValue
                             let eventEDate1 = getEvent1["endDate"].stringValue
                             
@@ -924,7 +953,35 @@ extension Dashboard{
                             let endDate = endFormatter.date(from: getEnd)
                             endFormatter.dateFormat = "MMM dd, yyyy"
                             let resultStringend = endFormatter.string(from: endDate!)
-                            self.lblEventDate2.text = resultString
+                            self.lblEventDate1.text = resultString
+                            self.viewEvent1.isHidden = false
+                            self.viewUpcoming.isHidden = false
+                            // event 2
+                            
+                            let getEvent2 = allEventList[1]
+                            let event2 = getEvent2["title"].stringValue
+                            self.lblEvent2.text = event2
+                            let eventSDate2 = getEvent2["startDate"].stringValue
+                            let eventEDate2 = getEvent2["endDate"].stringValue
+                            
+                            let start2 = eventSDate2.components(separatedBy: "T")
+                            let getStart2 : String = start2[0]
+                            let end2 = eventEDate2.components(separatedBy: "T")
+                            let getEnd2 : String = end2[0]
+                            
+                            
+                            let inputFormatter2 = DateFormatter()
+                            inputFormatter2.dateFormat = "yyyy-MM-dd"
+                            let showDate2 = inputFormatter2.date(from: getStart2)
+                            inputFormatter.dateFormat = "MMM dd, yyyy"
+                            let resultString2 = inputFormatter2.string(from: showDate2!)
+                            
+                            let endFormatter2 = DateFormatter()
+                            endFormatter2.dateFormat = "yyyy-MM-dd"
+                            let endDate2 = endFormatter2.date(from: getEnd2)
+                            endFormatter2.dateFormat = "MMM dd, yyyy"
+                            let resultStringend2 = endFormatter2.string(from: endDate2!)
+                            self.lblEventDate2.text = resultString2
                             
                             self.viewEvent2.isHidden = false
                             self.viewUpcoming.isHidden = false
@@ -968,8 +1025,10 @@ class SelectedCourseList {
     var CourseID:String?
     var ScheduleType:String?
     var attendanceTaken:String?
+    var attCatID:String?
+    var markingPeriod:String?
     
-    init(CourseSectionName: String?, CourseTitle: String?, MeetingDays: String?, CourseGradeLevel:String?, PeriodTitle: String?, PeriodStartTime:String?, RoomTitle:String?,CourseSectionID:String?,CourseID:String?,ScheduleType:String?,attendanceTaken:String?) {
+    init(CourseSectionName: String?, CourseTitle: String?, MeetingDays: String?, CourseGradeLevel:String?, PeriodTitle: String?, PeriodStartTime:String?, RoomTitle:String?,CourseSectionID:String?,CourseID:String?,ScheduleType:String?,attendanceTaken:String?,attCatID:String?,markingPeriod:String?) {
         self.CourseSectionName = CourseSectionName
         self.CourseTitle = CourseTitle
         self.MeetingDays = MeetingDays
@@ -982,6 +1041,8 @@ class SelectedCourseList {
         self.CourseID = CourseID
         self.ScheduleType = ScheduleType
         self.attendanceTaken = attendanceTaken
+        self.attCatID = attCatID
+        self.markingPeriod = markingPeriod
     }
 }
 

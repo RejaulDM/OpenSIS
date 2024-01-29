@@ -9,8 +9,9 @@ import UIKit
 import SVProgressHUD
 import Alamofire
 import SwiftyJSON
+import Toast_Swift
 
-class OverviewDetailsController: UIViewController {
+class OverviewDetailsController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var viewOverview: UIView!
     @IBOutlet weak var lblCourseSectionName: UILabel!
@@ -39,9 +40,11 @@ class OverviewDetailsController: UIViewController {
     @IBOutlet weak var imgOnlineClassroom: UIImageView!
     
     @IBOutlet weak var lblStandardGradeScale: UILabel!
-    @IBOutlet weak var lblOnlineClassroomURL: UILabel!
-    @IBOutlet weak var lblOnlineClassroomPassword: UILabel!
     
+    @IBOutlet weak var lblOnlineClassroomURL: UITextField!
+    
+    
+    @IBOutlet weak var lblOnlineClassroomPassword: UITextField!
     
     @IBOutlet weak var lblMarkingPeriod: UILabel!
     
@@ -85,6 +88,8 @@ class OverviewDetailsController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.lblOnlineClassroomURL.delegate = self
+        
          viewOverview.layer.cornerRadius = 10
          viewOverview.layer.borderWidth = 1
          viewOverview.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0)
@@ -103,8 +108,18 @@ class OverviewDetailsController: UIViewController {
     }
     
 
+    @IBAction func btnTappedTextEdite(_ sender: Any) {
+        lblOnlineClassroomURL.isEnabled = true
+        lblOnlineClassroomURL.endEditing(true)
+        lblOnlineClassroomURL.becomeFirstResponder()
+    }
     
-
+    @IBAction func btnCoyPass(_ sender: Any) {
+        UIPasteboard.general.string = lblOnlineClassroomPassword.text
+        
+        self.view.makeToast("Password copied successfully", duration: 2.0, position: .bottom)
+    }
+    
 }
 
 
@@ -227,27 +242,27 @@ extension OverviewDetailsController{
                                  switch(val){
                                  case "Monday":
                                      self.btnMon.setBackgroundImage(self.btnBackImg, for:.normal)
-                                     self.btnMon.tintColor = .white
+                                     self.btnMon.setTitleColor(.white, for: .normal)
                                      break;
                                  case "Tuesday":
                                      self.btnTue.setBackgroundImage(self.btnBackImg, for:.normal)
-                                     self.btnTue.tintColor = .white
+                                     self.btnTue.setTitleColor(.white, for: .normal)
                                      break;
                                  case "Wednesday":
                                      self.btnWed.setBackgroundImage(self.btnBackImg, for:.normal)
-                                     self.btnWed.tintColor = .white
+                                     self.btnWed.setTitleColor(.white, for: .normal)
                                      break;
                                  case "Thursday":
                                      self.btnThu.setBackgroundImage(self.btnBackImg, for:.normal)
-                                     self.btnThu.tintColor = .white
+                                     self.btnThu.setTitleColor(.white, for: .normal)
                                      break;
                                  case "Friday":
                                      self.btnFri.setBackgroundImage(self.btnBackImg, for:.normal)
-                                     self.btnFri.tintColor = .white
+                                     self.btnFri.setTitleColor(.white, for: .normal)
                                      break;
                                  case "Saturday":
                                      self.btnSatu.setBackgroundImage(self.btnBackImg, for:.normal)
-                                     self.btnSatu.tintColor = .white
+                                     self.btnSatu.setTitleColor(.white, for: .normal)
                                      break;
                                  default:
                                      break;

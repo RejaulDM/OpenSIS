@@ -220,14 +220,16 @@ class CalendarController: UIViewController,FSCalendarDataSource,FSCalendarDelega
         let parameters =  [
             "calendarEventList":[],
             "assignmentList":[],
-            "calendarId":[1],
+            "calendarId":[3],
+            "studentId":0,
             "_tenantName":storeTenantName,
             "_userName":storeName,
             "_token":storeToken,
             "tenantId":storeTenantID,
             "schoolId":storeSchoolID,
-            "membershipId": "4",//stroreMembershipID,
-            "academicYear":storeAcademicYears
+            "membershipId": stroreMembershipID,
+            "academicYear":storeAcademicYears,
+            "_academicYear": storeAcademicYears
         ] as [String : Any]
         
        
@@ -332,14 +334,16 @@ class CalendarController: UIViewController,FSCalendarDataSource,FSCalendarDelega
         let parameters =  [
             "calendarEventList":[],
             "assignmentList":[],
-            "calendarId":[1],
+            "calendarId":[3],
+            "studentId":0,
             "_tenantName":storeTenantName,
             "_userName":storeName,
             "_token":storeToken,
             "tenantId":storeTenantID,
             "schoolId":storeSchoolID,
             "membershipId": "4",//stroreMembershipID,
-            "academicYear":storeAcademicYears
+            "academicYear":storeAcademicYears,
+            "_academicYear": storeAcademicYears
         ] as [String : Any]
         
        
